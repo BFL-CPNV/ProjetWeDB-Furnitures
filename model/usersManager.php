@@ -1,13 +1,11 @@
 <?php
 /**
- * This php file is designed to manage all operations regarding user's management
- * Author   : nicolas.glassey@cpnv.ch
- * Project  : Code
- * Created  : 31.01.2019 - 18:40
- *
- * Last update :    [01.12.2018 author]
- *                  [add $logName in function setFullPath]
- * Source       :   pascal.benzonana
+ * Title      : usersManager.php
+ * MVC Type   : model
+ * Purpose    : User management
+ * Author     : Pascal.BENZONANA
+ * Updated by : Nicolas.GLASSEY
+ * Version    : 13-APR-2020
  */
 
 /**

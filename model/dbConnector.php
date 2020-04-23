@@ -1,12 +1,11 @@
 <?php
 /**
- * Author   : nicolas.glassey@cpnv.ch
- * Project  : dbConnector
- * Created  : 28.01.2019 - 20:13
- *
- * Last update :    [01.12.2018 author]
- *                  [add $logName in function setFullPath]
- * Git source  :    [link]
+ * Title      : dbConnector.php
+ * MVC Type   : model
+ * Purpose    : database manager
+ * Author     : Pascal.BENZONANA
+ * Updated by : Nicolas.GLASSEY
+ * Version    : 13-APR-2020
  */
 
 /**
@@ -32,7 +31,7 @@ function executeQuerySelect($query){
 /**
  * This function is designed to insert value in database
  * @param $query
- * @return bool|null : $statement->execute() returne true is the insert was successful
+ * @return bool|null : $statement->execute() returns true is the insert was successful
  */
 function executeQueryInsert($query){
     $queryResult = null;
@@ -61,7 +60,7 @@ function openDBConnexion (){
     $charset = 'utf8';
     $dbName = 'snows';
     $userName = 'appliConnector';
-    $userPwd = '123qweasD$';
+    $userPwd = '123qweasD!';
     $dsn = $sqlDriver . ':host=' . $hostname . ';dbname=' . $dbName . ';port=' . $port . ';charset=' . $charset;
 
     try{
