@@ -10,7 +10,7 @@
 
 /**
  * This function is designed to execute a query received as parameter
- * @param $query : must be correctly build for sql (synthaxis) but the protection against sql injection will be done there
+ * @param $query : must be correctly build for sql (syntaxis)
  * @return array|null : get the query result (can be null)
  * Source : http://php.net/manual/en/pdo.prepare.php
  */

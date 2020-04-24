@@ -75,7 +75,7 @@
                             <ul class="nav nav-pills ddmenu">
                                 <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
                                 <li><a href="index.php?action=home">Home</a></li>
-                                <li><a href="index.php?action=displaySnows">Snows</a></li>
+                                <li><a href="index.php?action=displayArticles">Snows</a></li>
                                 <!-- On gère ensuite les cas pour lesquels on aimerait permettre à l'utilisateur de se connecter/s'inscrire-->
                                 <?php if(!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action']=="logout"))) :?>
                                     <li><a href="index.php?action=login">Login</a></li>
@@ -83,9 +83,6 @@
                                 <!-- Puis la situation "connecté"-->
                                 <?php else :?>
                                     <li><a href="index.php?action=logout">Logout</a></li>
-                                <?php endif; ?>
-                                <?php if(isset($_SESSION['cart'])) :?>
-                                    <li><a href="index.php?action=displayCart"><img src="view/content/images/cart.png">  <?=  count($_SESSION['cart']);?> snow(s)</a></li>
                                 <?php endif; ?>
                             </ul>
                             <!-- on affiche, si la session est active, l'adresse email de l'utilisateur-->

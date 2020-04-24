@@ -1,8 +1,8 @@
 <?php
 /**
  * Title      : index.php
- * MVC Type   : controler
- * Purpose    : user action management
+ * MVC Type   : rooter
+ * Purpose    : user action management. Redirection to the controler.
  * Author     : Pascal.BENZONANA
  * Updated by : Nicolas.GLASSEY
  * Version    : 13-APR-2020
@@ -10,6 +10,7 @@
 
 session_start();
 require "controler/users.php";
+require "controler/articles.php";
 
 if (isset($_GET['action'])) {
   $action = $_GET['action'];
@@ -26,11 +27,11 @@ if (isset($_GET['action'])) {
       case 'register' :
           register($_POST);
           break;
-      case 'displaySnows' :
-          displaySnows();
+      case 'displayArticles' :
+          displayArticles();
           break;
       default :
-          home();
+          home();//TODO 404
   }
 }
 else {

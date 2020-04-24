@@ -19,7 +19,6 @@ function home(){
     require "view/home.php";
 }
 
-//region users management
 /**
  * This function is designed to manage login request
  * @param $loginRequest containing login fields required to authenticate the user
@@ -45,8 +44,8 @@ function login($loginRequest){
 }
 
 /**
- * This fonction is designed
- * @param $registerRequest
+ * This fonction is designed //TODO
+ * @param $registerRequest : //TODO
  */
 function register($registerRequest){
     //variable set
@@ -77,9 +76,6 @@ function register($registerRequest){
  */
 function createSession($userEmailAddress){
     $_SESSION['userEmailAddress'] = $userEmailAddress;
-    //set user type in Session
-    $userType = getUserType($userEmailAddress);
-    $_SESSION['userType'] = $userType;
 }
 
 /**
@@ -90,85 +86,3 @@ function logout(){
     session_destroy();
     require "view/home.php";
 }
-//endregion
-
-
-//region snows management
-/**
- * This function is designed to display Snows
- * There are two different view available.
- * One for the seller, an other one for the customer.
- */
-function displaySnows(){
-    if (isset($_POST['resetCart'])) {
-        unset($_SESSION['cart']);
-    }
-
-    require_once "model/snowsManager.php";
-    $snowsResults = getSnows();
-
-    if (isset($_SESSION['userType']))
-    {
-        switch ($_SESSION['userType']) {
-            case 1://this is a customer
-                require "view/articles.php";
-                break;
-            case 2://this a seller
-                require "view/snowsSeller.php";
-                break;
-            default:
-                require "view/articles.php";
-                break;
-        }
-    }else{
-        require "view/articles.php";
-    }
-}
-
-/**
- * This function is designed to get only one snow results (for aSnow view)
- * @param none
- */
-function displayASnow($snow_code){
-    if (isset($registerRequest['inputUserEmailAddress'])){
-        //TODO
-    }
-    require_once "model/snowsManager.php";
-    $snowsResults= getASnow($snow_code);
-    require "view/aSnow.php";
-}
-//endregion
-
-//region Cart Management
-function displayCart(){
-    $_GET['action'] = "cart";
-    require "view/cart.php";
-}
-
-
-function snowLeasingRequest($snowCode){
-     require "model/snowsManager.php";
-     $snowsResults = getASnow($snowCode);
-     $_GET['action'] = "snowLeasingRequest";
-     require "view/snowLeasingRequest.php";
-}
-
-/**
- * This function designed to manage all request impacting the cart content
- * @param $snowCode
- * @param $snowLocationRequest
- */
-function updateCartRequest($snowCode, $snowLocationRequest){
-    $cartArrayTemp = array();
-    if(($snowLocationRequest) AND ($snowCode)) {
-        if (isset($_SESSION['cart'])) {
-            $cartArrayTemp = $_SESSION['cart'];
-        }
-        require "model/cartManager.php";
-        $cartArrayTemp = updateCart($cartArrayTemp, $snowCode, $snowLocationRequest['inputQuantity'], $snowLocationRequest['inputDays']);
-        $_SESSION['cart'] = $cartArrayTemp;
-    }
-    $_GET['action'] = "displayCart";
-    displayCart();
-}
-//endregion
