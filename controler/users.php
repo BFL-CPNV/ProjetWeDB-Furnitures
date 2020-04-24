@@ -24,7 +24,7 @@ function home(){
  * @param $loginRequest containing login fields required to authenticate the user
  */
 function login($loginRequest){
-    //if a login request was submitted
+    //if login request was submitted
     if (isset($loginRequest['inputUserEmailAddress']) && isset($loginRequest['inputUserPsw'])) {
         //extract login parameters
         $userEmailAddress = $loginRequest['inputUserEmailAddress'];
