@@ -18,7 +18,9 @@ $rows=0; // Column count
     <header>
         <h2> Nos snows</h2>
         <div class="yox-view">
-
+            <?php if($articleErrorMessage != null) :?>
+                <h5><span style="color:red"><?= $articleErrorMessage; ?></span></h5>
+            <?php else : ?>
             <?php foreach ($snowsResults as $result) : ?>
                 <?php $rows++; ?>
                 <?php if ($rows%4) : // tests to have 4 items / line ?>
@@ -51,7 +53,7 @@ $rows=0; // Column count
                     </div>
                 <?php endif ?>
             <?php endforeach ?>
-
+            <?php endif ?>
         </div>
     </header>
 </article>

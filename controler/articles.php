@@ -17,6 +17,11 @@
  */
 function displayArticles(){
     require_once "model/articlesManager.php";
-    $snowsResults = getArticles();
-    require "view/articles.php";
+    try{
+        $snowsResults = getArticles();
+    } catch (ModelDataBaseException $ex) {
+        $articleErrorMessage = "Nous rencontrons temporairement un problème technique pour afficher nos produits. Désolé du dérangement !";
+    } finally{
+        require "view/articles.php";
+    }
 }

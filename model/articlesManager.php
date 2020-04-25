@@ -13,6 +13,7 @@
  * @return array : containing all information about snows. Array can be empty.
  */
 function getArticles(){
+
     $snowsQuery = 'SELECT code, brand, model, snowLength, dailyPrice, qtyAvailable, photo, active FROM snows';
 
     require_once 'model/dbConnector.php';
