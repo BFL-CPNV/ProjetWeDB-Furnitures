@@ -1,7 +1,7 @@
 <?php
 /**
  * Title      : articlesManager.php
- * MVC Type   : model
+ * Type       :  model
  * Purpose    : Snows management
  * Author     : Pascal.BENZONANA
  * Updated by : Nicolas.GLASSEY
@@ -11,8 +11,11 @@
 /**
  * This function is designed to get all active snows
  * @return array : containing all information about snows. Array can be empty.
+ * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function getArticles(){
+function getArticles()
+{
+
     $snowsQuery = 'SELECT code, brand, model, snowLength, dailyPrice, qtyAvailable, photo, active FROM snows';
 
     require_once 'model/dbConnector.php';

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title      : usersManager.php
- * MVC Type   : model
+ * Type       :  model
  * Purpose    : User management
  * Author     : Pascal.BENZONANA
  * Updated by : Nicolas.GLASSEY
@@ -10,21 +10,22 @@
 
 /**
  * This function is designed to verify user's login
- * @param $userEmailAddress
- * @param $userPsw
+ * @param $userEmailAddress : must be meet RFC 5321/5322
+ * @param $userPsw : users's password
  * @return bool : "true" only if the user and psw match the database. In all other cases will be "false".
+ * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function isLoginCorrect($userEmailAddress, $userPsw){
+function isLoginCorrect($userEmailAddress, $userPsw)
+{
     $result = false;
 
     $strSeparator = '\'';
-    $loginQuery = 'SELECT userHashPsw FROM users WHERE userEmailAddress = '. $strSeparator . $userEmailAddress . $strSeparator;
+    $loginQuery = 'SELECT userHashPsw FROM users WHERE userEmailAddress = ' . $strSeparator . $userEmailAddress . $strSeparator;
 
     require_once 'model/dbConnector.php';
     $queryResult = executeQuerySelect($loginQuery);
 
-    if (count($queryResult) == 1)
-    {
+    if (count($queryResult) == 1) {
         $userHashPsw = $queryResult[0]['userHashPsw'];
         $result = password_verify($userPsw, $userHashPsw);
     }
@@ -33,22 +34,24 @@ function isLoginCorrect($userEmailAddress, $userPsw){
 
 /**
  * This function is designed to register a new account
- * @param $userEmailAddress
- * @param $userPsw
- * @return bool|null
+ * @param $userEmailAddress : must be meet RFC 5321/5322
+ * @param $userPsw : user's password
+ * @return bool : "true" only if the user doesn't already exist. In all other cases will be "false".
+ * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function registerNewAccount($userEmailAddress, $userPsw){
+function registerNewAccount($userEmailAddress, $userPsw)
+{
     $result = false;
 
     $strSeparator = '\'';
 
     $userHashPsw = password_hash($userPsw, PASSWORD_DEFAULT);
 
-    $registerQuery = 'INSERT INTO users (`userEmailAddress`, `userHashPsw`) VALUES (' .$strSeparator . $userEmailAddress .$strSeparator . ','.$strSeparator . $userHashPsw .$strSeparator. ')';
+    $registerQuery = 'INSERT INTO users (`userEmailAddress`, `userHashPsw`) VALUES (' . $strSeparator . $userEmailAddress . $strSeparator . ',' . $strSeparator . $userHashPsw . $strSeparator . ')';
 
     require_once 'model/dbConnector.php';
     $queryResult = executeQueryInsert($registerQuery);
-    if($queryResult){
+    if ($queryResult) {
         $result = $queryResult;
     }
     return $result;

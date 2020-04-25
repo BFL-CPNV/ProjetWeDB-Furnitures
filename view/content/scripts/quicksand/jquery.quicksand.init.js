@@ -1,14 +1,14 @@
 ﻿$(document).ready(function () {
-    
+
     $(".portfolio a").hover(function () {
-        $(this).children("img").animate({ opacity: 0.75 }, "fast");
+        $(this).children("img").animate({opacity: 0.75}, "fast");
     }, function () {
-        $(this).children("img").animate({ opacity: 1.0 }, "slow");
+        $(this).children("img").animate({opacity: 1.0}, "slow");
     });
 
     var $portfolioClone = $(".portfolio").clone();
 
-    $(".portfolio a[rel^='prettyPhoto']").prettyPhoto({ social_tools: false });
+    $(".portfolio a[rel^='prettyPhoto']").prettyPhoto({social_tools: false});
 
     $(".filter a").click(function (e) {
 
@@ -29,12 +29,12 @@
         }, function () {
 
             $(".portfolio a").hover(function () {
-                $(this).children("img").animate({ opacity: 0.75 }, "fast");
+                $(this).children("img").animate({opacity: 0.75}, "fast");
             }, function () {
-                $(this).children("img").animate({ opacity: 1.0 }, "slow");
+                $(this).children("img").animate({opacity: 1.0}, "slow");
             });
 
-            $(".portfolio a[rel^='prettyPhoto']").prettyPhoto({ social_tools: false });
+            $(".portfolio a[rel^='prettyPhoto']").prettyPhoto({social_tools: false});
 
         });
 

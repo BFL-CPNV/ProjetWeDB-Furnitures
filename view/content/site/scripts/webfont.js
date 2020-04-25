@@ -1,7 +1,11 @@
 ﻿function LoadFont(fontFamily) {
     fontFamily = fontFamily.split(",")[0];
     if (fontFamily != '')
-        try { WebFont.load({ google: { families: [fontFamily]} }) } catch (e) { };
+        try {
+            WebFont.load({google: {families: [fontFamily]}})
+        } catch (e) {
+        }
+    ;
 }
 
 function EmbedFont(id) {
