@@ -1,7 +1,7 @@
 <?php
 /**
  * Title      : index.php
- * MVC Type   : rooter //TODO
+ * Type       : rooter
  * Purpose    : user actions management. Redirection to the controler.
  * Author     : Pascal.BENZONANA
  * Updated by : Nicolas.GLASSEY
@@ -13,27 +13,26 @@ require "controler/users.php";
 require "controler/articles.php";
 
 if (isset($_GET['action'])) {
-  $action = $_GET['action'];
-  switch ($action) {
-      case 'home' :
-          home();
-          break;
-      case 'login' :
-          login($_POST);
-          break;
-      case 'logout' :
-          logout();
-          break;
-      case 'register' :
-          register($_POST);
-          break;
-      case 'displayArticles' :
-          displayArticles();
-          break;
-      default :
-          lost();
-  }
-}
-else {
+    $action = $_GET['action'];
+    switch ($action) {
+        case 'home' :
+            home();
+            break;
+        case 'login' :
+            login($_POST);
+            break;
+        case 'logout' :
+            logout();
+            break;
+        case 'register' :
+            register($_POST);
+            break;
+        case 'displayArticles' :
+            displayArticles();
+            break;
+        default :
+            lost();
+    }
+} else {
     home();
 }

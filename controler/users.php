@@ -1,7 +1,7 @@
 <?php
 /**
  * Title      : users.php
- * MVC Type   : controler
+ * Type       : controler
  * Purpose    : users management
  * Author     : Pascal.BENZONANA
  * Updated by : Nicolas.GLASSEY
@@ -15,11 +15,14 @@
 /**
  * This function is designed to redirect the user to the home page (depending on the action received by the index)
  */
-function home(){
+function home()
+{
     require "view/home.php";
 }
 
-function lost(){
+/** This function is designed to inform the user that the ressource requested doesn't exist (i. e. if the user modify the url manually) */
+function lost()
+{
     require "view/lost.php";
 }
 
@@ -27,9 +30,10 @@ function lost(){
  * This function is designed to manage login request
  * @param $loginRequest containing login fields required to authenticate the user
  */
-function login($loginRequest){
+function login($loginRequest)
+{
     //if login request was submitted
-    try{
+    try {
         if (isset($loginRequest['inputUserEmailAddress']) && isset($loginRequest['inputUserPsw'])) {
             //extract login parameters
             $userEmailAddress = $loginRequest['inputUserEmailAddress'];
@@ -55,11 +59,12 @@ function login($loginRequest){
 }
 
 /**
- * This fonction is designed //TODO
- * @param $registerRequest : //TODO
+ * This fonction is designed manage the register request
+ * @param $registerRequest : contains all fields mandatory and optional to register a new user (coming from a form)
  */
-function register($registerRequest){
-    try{
+function register($registerRequest)
+{
+    try {
         //variable set
         if (isset($registerRequest['inputUserEmailAddress']) && isset($registerRequest['inputUserPsw']) && isset($registerRequest['inputUserPswRepeat'])) {
 
@@ -68,21 +73,21 @@ function register($registerRequest){
             $userPsw = $registerRequest['inputUserPsw'];
             $userPswRepeat = $registerRequest['inputUserPswRepeat'];
 
-            if ($userPsw == $userPswRepeat){
+            if ($userPsw == $userPswRepeat) {
                 require_once "model/usersManager.php";
                 if (registerNewAccount($userEmailAddress, $userPsw)) {
                     createSession($userEmailAddress);
                     $registerErrorMessage = null;
                     require "view/home.php";
-                }else{
+                } else {
                     $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
                     require "view/register.php";
                 }
-            }else{
+            } else {
                 $registerErrorMessage = "Les mots de passes ne sont pas similaires !";
                 require "view/register.php";
             }
-        }else{
+        } else {
             $registerErrorMessage = null;
             require "view/register.php";
         }
@@ -94,16 +99,19 @@ function register($registerRequest){
 
 /**
  * This function is designed to create a new user session
- * @param $userEmailAddress : user unique id
+ * @param $userEmailAddress : user unique id, must be meet RFC 5321/5322
  */
-function createSession($userEmailAddress){
+function createSession($userEmailAddress)
+{
     $_SESSION['userEmailAddress'] = $userEmailAddress;
 }
 
 /**
  * This function is designed to manage logout request
+ * The user session will be destroyed.
  */
-function logout(){
+function logout()
+{
     $_SESSION = array();
     session_destroy();
     require "view/home.php";

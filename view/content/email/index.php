@@ -1,17 +1,16 @@
 <?php
- if(isset($_POST['submit']))
- {
+if (isset($_POST['submit'])) {
     $name = $_POST['name'];
-	$email = $_POST['email'];
-	$query = $_POST['message'];
-	$email_from = $name.'<'.$email.'>';
+    $email = $_POST['email'];
+    $query = $_POST['message'];
+    $email_from = $name . '<' . $email . '>';
 
- $to="your-email@your-domain.com";
- $subject="Enquiry!";
- $headers  = 'MIME-Version: 1.0' . "\r\n";
- $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
- $headers .= "From: ".$email_from."\r\n";
- $message="	  
+    $to = "your-email@your-domain.com";
+    $subject = "Enquiry!";
+    $headers = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+    $headers .= "From: " . $email_from . "\r\n";
+    $message = "	  
  	   
  		 Name:
 		 $name 	   
@@ -23,10 +22,10 @@
 		 $query 	   
       
    ";
-	if(mail($to,$subject,$message,$headers))
-		header("Location:../contact.php?msg=Successful Submission! Thankyou for contacting us.");
-	else
-		header("Location:../contact.php?msg=Error To send Email !");
-		//contact:-your-email@your-domain.com
- }
+    if (mail($to, $subject, $message, $headers))
+        header("Location:../contact.php?msg=Successful Submission! Thankyou for contacting us.");
+    else
+        header("Location:../contact.php?msg=Error To send Email !");
+    //contact:-your-email@your-domain.com
+}
 ?>

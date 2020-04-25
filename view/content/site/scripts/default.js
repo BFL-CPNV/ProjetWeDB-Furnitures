@@ -52,7 +52,7 @@ $(document).ready(function () {
             return;
         }
         var width = Math.max($(window).innerWidth(), window.innerWidth);
-        if (width > 979) $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();        
+        if (width > 979) $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn();
     }, function () {
         if ($.browser.msie && (parseInt($.browser.version, 10) === 8 || parseInt($.browser.version, 10) === 7)) {
             $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut();

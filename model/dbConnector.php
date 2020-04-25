@@ -1,7 +1,7 @@
 <?php
 /**
  * Title      : dbConnector.php
- * MVC Type   : model
+ * Type       :  model
  * Purpose    : database manager
  * Author     : Pascal.BENZONANA
  * Updated by : Nicolas.GLASSEY
@@ -13,14 +13,14 @@
  * @param $query : must be correctly build for sql (syntaxis)
  * @return array|null : get the query result (can be null)
  * Source : http://php.net/manual/en/pdo.prepare.php
- * @throws ModelException : will be throw if something goes wrong with the database opening process
+ * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function executeQuerySelect($query){
+function executeQuerySelect($query)
+{
     $queryResult = null;
 
     $dbConnexion = openDBConnexion();//open database connexion
-    if ($dbConnexion != null)
-    {
+    if ($dbConnexion != null) {
         $statement = $dbConnexion->prepare($query);//prepare query
         $statement->execute();//execute query
         $queryResult = $statement->fetchAll();//prepare result for client
@@ -33,14 +33,14 @@ function executeQuerySelect($query){
  * This function is designed to insert value in database
  * @param $query
  * @return bool|null : $statement->execute() returns true is the insert was successful
- * @throws ModelException : will be throw if something goes wrong with the database opening process
+ * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function executeQueryInsert($query){
+function executeQueryInsert($query)
+{
     $queryResult = null;
 
     $dbConnexion = openDBConnexion();//open database connexion
-    if ($dbConnexion != null)
-    {
+    if ($dbConnexion != null) {
         $statement = $dbConnexion->prepare($query);//prepare query
         $queryResult = $statement->execute();//execute query
     }
@@ -52,9 +52,10 @@ function executeQueryInsert($query){
  * This function is designed to manage the database connexion. Closing will be not proceeded there. The client is responsible of this.
  * @return PDO|null
  * Source : http://php.net/manual/en/pdo.construct.php
- * @throws ModelException : will be throw if something goes wrong with the database opening process
+ * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
-function openDBConnexion (){
+function openDBConnexion()
+{
     $tempDbConnexion = null;
 
     $sqlDriver = 'mysql';
@@ -68,12 +69,12 @@ function openDBConnexion (){
 
     try {
         $tempDbConnexion = new PDO($dsn, $userName, $userPwd);
-    }
-    catch (PDOException $exception) {
+    } catch (PDOException $exception) {
         throw new ModelDataBaseException();
     }
     return $tempDbConnexion;
 }
 
-class ModelDataBaseException extends Exception {
+class ModelDataBaseException extends Exception
+{
 }

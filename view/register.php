@@ -1,21 +1,21 @@
 <?php
 /**
  * Title      : register.php
- * MVC Type   : view
+ * Type       :  view
  * Purpose    : view used to register a new user
  * Author     : Pascal.BENZONANA
  * Updated by : Nicolas.GLASSEY
  * Version    : 13-APR-2020
  */
 
-$title ='Rent A Snow - Login/Logout';
+$title = 'Rent A Snow - Login/Logout';
 
 ob_start();
 ?>
     <h1>S'inscrire</h1>
-    <?php if ($registerErrorMessage != null) :?>
-        <h5><span style="color:red"><?= $registerErrorMessage; ?></span></h5>
-    <?php endif ?>
+<?php if ($registerErrorMessage != null) : ?>
+    <h5><span style="color:red"><?= $registerErrorMessage; ?></span></h5>
+<?php endif ?>
     <article>
         <form class='form' method='POST' action="index.php?action=register">
 
@@ -30,7 +30,9 @@ ob_start();
                 <label for="psw-repeat"><b>Vérifier le mot de passe</b></label>
                 <input type="password" placeholder="Mot de passe" name="inputUserPswRepeat" required>
 
-                <p>En soumettant votre demande de compte, vous validez les conditions générales d'utilisation.<a href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">CGU et vie privée</a>.</p>
+                <p>En soumettant votre demande de compte, vous validez les conditions générales d'utilisation.<a
+                            href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">CGU et vie
+                        privée</a>.</p>
                 <button type="submit" class="registerbtn">S'inscrire</button>
             </div>
         </form>
@@ -38,7 +40,7 @@ ob_start();
             <p>Déjà membre ? <a href="index.php?action=login">Se connecter</a>.</p>
         </div>
     </article>
-<?php 
-  $content = ob_get_clean();
-  require 'gabarit.php';
+<?php
+$content = ob_get_clean();
+require 'gabarit.php';
 ?>
