@@ -8,8 +8,8 @@
  */
 
 /**
- * @brief This function is designed to get all active snows
- * @return array : containing all information about snows. Array can be empty.
+ * @brief This function is designed to get all active articles
+ * @return array : containing all information about the articles. Array can be empty.
  * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
 function getArticles()
