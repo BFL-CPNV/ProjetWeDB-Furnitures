@@ -31,7 +31,7 @@ if (isset($_GET['action'])) {
           displayArticles();
           break;
       default :
-          home();//TODO 404
+          lost();
   }
 }
 else {

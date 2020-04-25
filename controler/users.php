@@ -19,6 +19,10 @@ function home(){
     require "view/home.php";
 }
 
+function lost(){
+    require "view/lost.php";
+}
+
 /**
  * This function is designed to manage login request
  * @param $loginRequest containing login fields required to authenticate the user
