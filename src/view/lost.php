@@ -1,6 +1,6 @@
 <?php
 /**
- * @file      articles.php
+ * @file      lost.php
  * @brief     This view is designed to inform the user when he tries to navigate to an resource who doesn't exist
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY

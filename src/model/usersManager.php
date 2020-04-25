@@ -1,6 +1,6 @@
 <?php
 /**
- * @file      userManager.php
+ * @file      usersManager.php
  * @brief     This model is designed to implements users business logic
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY

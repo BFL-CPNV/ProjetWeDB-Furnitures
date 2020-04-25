@@ -1,6 +1,6 @@
 <?php
 /**
- * @file      articles.php
+ * @file      login.php
  * @brief     This view is designed to display the login form
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY
