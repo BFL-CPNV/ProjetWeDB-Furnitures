@@ -63,7 +63,7 @@
         <div class="row-fluid">
             <div class="span12">
                 <div id="divLogo" class="pull-left">
-                    <a href="index.php" id="divSiteTitle">Rent A Snow</a><br />
+                    <a href="index.php" id="divSiteTitle">Louer un snowboard</a><br />
                     <a href="index.php" id="divTagLine">La glisse à moindre coût</a>
                 </div>
                 <div id="divMenuRight" class="pull-right">
@@ -74,15 +74,15 @@
                         <div class="nav-collapse collapse">
                             <ul class="nav nav-pills ddmenu">
                                 <!-- On commence par afficher les boutons qui s'afficheront, peu importe les événements-->
-                                <li><a href="index.php?action=home">Home</a></li>
+                                <li><a href="index.php?action=home">Accueil</a></li>
                                 <li><a href="index.php?action=displayArticles">Snows</a></li>
                                 <!-- On gère ensuite les cas pour lesquels on aimerait permettre à l'utilisateur de se connecter/s'inscrire-->
                                 <?php if(!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action']=="logout"))) :?>
-                                    <li><a href="index.php?action=login">Login</a></li>
-                                    <li><a href="index.php?action=register"  style="color:#FC05CB">Register</a></li>
+                                    <li><a href="index.php?action=login">S'annoncer</a></li>
+                                    <li><a href="index.php?action=register"  style="color:#FC05CB">S'inscrire</a></li>
                                 <!-- Puis la situation "connecté"-->
                                 <?php else :?>
-                                    <li><a href="index.php?action=logout">Logout</a></li>
+                                    <li><a href="index.php?action=logout">Se déconnecter</a></li>
                                 <?php endif; ?>
                             </ul>
                             <!-- on affiche, si la session est active, l'adresse email de l'utilisateur-->

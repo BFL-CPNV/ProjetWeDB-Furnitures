@@ -33,12 +33,15 @@ function login($loginRequest){
         //try to check if user/psw are matching with the database
         require_once "model/usersManager.php";
         if (isLoginCorrect($userEmailAddress, $userPsw)) {
+            $loginErrorMessage = null;
             createSession($userEmailAddress);
             require "view/home.php";
-        } else { //if the user/psw does not match, login form appears again
+        } else { //if the user/psw does not match, login form appears again with an error message
+            $loginErrorMessage = "L'adresse email et/ou le mot de passe ne correspondent pas !";
             require "view/login.php";
         }
     }else{ //the user does not yet fill the form
+        //this code will be never called as long as the GUI doesn't allow sending form with emtpy input fields
         require "view/login.php";
     }
 }
@@ -58,14 +61,20 @@ function register($registerRequest){
 
         if ($userPsw == $userPswRepeat){
             require_once "model/usersManager.php";
-            if (registerNewAccount($userEmailAddress, $userPsw)){
+            if (registerNewAccount($userEmailAddress, $userPsw)) {
                 createSession($userEmailAddress);
+                $registerErrorMessage = null;
                 require "view/home.php";
+            }else{
+                $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
+                require "view/register.php";
             }
         }else{
+            $registerErrorMessage = "Les mots de passes ne sont pas similaires !";
             require "view/register.php";
         }
     }else{
+        $registerErrorMessage = null;
         require "view/register.php";
     }
 }

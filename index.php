@@ -1,8 +1,8 @@
 <?php
 /**
  * Title      : index.php
- * MVC Type   : rooter
- * Purpose    : user action management. Redirection to the controler.
+ * MVC Type   : rooter //TODO
+ * Purpose    : user actions management. Redirection to the controler.
  * Author     : Pascal.BENZONANA
  * Updated by : Nicolas.GLASSEY
  * Version    : 13-APR-2020
