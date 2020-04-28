@@ -25,7 +25,7 @@ ob_start();
                 <input type="password" placeholder="Mot de passe" name="inputUserPsw" required>
             </div>
             <div class="container">
-                <button type="submit" class="btn btn-default">S'annoncer</button>
+                <button type="submit" class="btn btn-default">Login</button>
                 <button type="reset" class="btn btn-default">Effacer</button>
                 <span class="psw"><a href="index.php?action=forgotPassword">Mot de passe oublié ?</a></span>
             </div>

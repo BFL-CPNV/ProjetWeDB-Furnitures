@@ -66,7 +66,7 @@
         <div class="row-fluid">
             <div class="span12">
                 <div id="divLogo" class="pull-left">
-                    <a href="index.php" id="divSiteTitle">Louer un snowboard</a><br/>
+                    <a href="index.php" id="divSiteTitle">Rent A Snow</a><br/>
                     <a href="index.php" id="divTagLine">La glisse à moindre coût</a>
                 </div>
                 <div id="divMenuRight" class="pull-right">
@@ -82,7 +82,7 @@
                                 <li><a href="index.php?action=displayArticles">Snows</a></li>
                                 <!-- Display the button useful for login and register-->
                                 <?php if (!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action'] == "logout"))) : ?>
-                                    <li><a href="index.php?action=login">S'annoncer</a></li>
+                                    <li><a href="index.php?action=login">Login</a></li>
                                     <li><a href="index.php?action=register" style="color:#FC05CB">S'inscrire</a></li>
                                 <?php else : ?>
                                     <!-- Display the button useful for logout-->
