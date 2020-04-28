@@ -8,7 +8,7 @@
  */
 
 ob_start();
-$title = "RentASnow - Accueil";
+$title = "Rent A Snow - Home";
 ?>
 
     <div class="span12" id="divMain">

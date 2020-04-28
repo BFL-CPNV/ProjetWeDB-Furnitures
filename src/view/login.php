@@ -11,7 +11,7 @@ $title = 'Rent A Snow - Login/Logout';
 
 ob_start();
 ?>
-    <h2>S'annoncer</h2>
+    <h2>Login</h2>
 <?php if ($loginErrorMessage != null) : ?>
     <h5><span style="color:red"><?= $loginErrorMessage; ?></span></h5>
 <?php endif ?>

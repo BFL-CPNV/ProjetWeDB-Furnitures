@@ -76,7 +76,7 @@ function openDBConnexion()
 
 /**
  * Class ModelDataBaseException
- * @brief This class is designed to manage specifica model exception
+ * @brief This class is designed to manage specific model exception
  */
 class ModelDataBaseException extends Exception
 {

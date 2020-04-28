@@ -7,7 +7,7 @@
  * @version   13-APR-2020
  */
 
-$title = 'Rent A Snow - Login/Logout';
+$title = 'Rent A Snow - Register';
 
 ob_start();
 ?>
@@ -36,7 +36,7 @@ ob_start();
             </div>
         </form>
         <div class="container signin">
-            <p>Déjà membre ? <a href="index.php?action=login">Se connecter</a>.</p>
+            <p>Déjà membre ? <a href="index.php?action=login">Login</a>.</p>
         </div>
     </article>
 <?php

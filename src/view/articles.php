@@ -7,7 +7,7 @@
  * @version   13-APR-2020
  */
 
-$title = "Snows";
+$title = "Rent A Snow - Snows";
 
 ob_start();
 $rows = 0; // Column count

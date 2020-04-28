@@ -7,7 +7,7 @@
  * @version   13-APR-2020
  */
 
-$title = 'Rent A Snow - Login/Logout';
+$title = 'Rent A Snow - Lost';
 
 ob_start();
 ?>
