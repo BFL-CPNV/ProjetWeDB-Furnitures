@@ -12,7 +12,7 @@ $title = 'Rent A Snow - Login/Logout';
 ob_start();
 ?>
     <h2>Login</h2>
-<?php if ($loginErrorMessage != null) : ?>
+<?php if(isset($loginErrorMessage)) : ?>
     <h5><span style="color:red"><?= $loginErrorMessage; ?></span></h5>
 <?php endif ?>
     <article>

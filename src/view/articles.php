@@ -17,7 +17,7 @@ $rows = 0; // Column count
         <header>
             <h2> Nos snows</h2>
             <div class="yox-view">
-                <?php if ($articleErrorMessage != null) : ?>
+                <?php if(isset($articleErrorMessage)) : ?>
                     <h5><span style="color:red"><?= $articleErrorMessage; ?></span></h5>
                 <?php else : ?>
                     <?php foreach ($snowsResults as $result) : ?>

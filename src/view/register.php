@@ -12,7 +12,7 @@ $title = 'Rent A Snow - Register';
 ob_start();
 ?>
     <h1>S'inscrire</h1>
-<?php if ($registerErrorMessage != null) : ?>
+<?php if(isset($registerErrorMessage)) : ?>
     <h5><span style="color:red"><?= $registerErrorMessage; ?></span></h5>
 <?php endif ?>
     <article>
