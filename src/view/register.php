@@ -7,7 +7,7 @@
  * @version   13-APR-2020
  */
 
-$title = 'Rent A Snow - Register';
+$title = 'Rent A Snow - Inscription';
 
 ob_start();
 ?>
