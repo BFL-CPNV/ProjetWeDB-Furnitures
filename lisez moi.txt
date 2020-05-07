@@ -1,0 +1,2 @@
+Il faut finir de merge la template avec le code, le principe est de finir le gabarit afin d'avoir le visuel aranoz
+ensuite il faudra utiliser les photos de furnitures que j'ai inséré dans content dans view.
