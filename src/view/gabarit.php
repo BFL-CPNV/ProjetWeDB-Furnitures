@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="view/content/css/animate.css" type="text/css">
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="view/content/css/owl.carousel.min.css" type="text/css">
+    <!-- nice select CSS -->
+    <link rel="stylesheet" href="view/content/css/nice-select.css" type="text/css">
     <!-- font awesome CSS -->
     <link rel="stylesheet" href="view/content/css/all.css" type="text/css">
     <!-- flaticon CSS -->
@@ -33,6 +35,7 @@
     <link rel="stylesheet" href="view/content/css/magnific-popup.css" type="text/css">
     <!-- swiper CSS -->
     <link rel="stylesheet" href="view/content/css/slick.css" type="text/css">
+    <link rel="stylesheet" href="view/content/css/price_rangs.css" type="text/css"> <!-- Not working -->
     <!-- style CSS -->
     <link rel="stylesheet" href="view/content/css/style.css" type="text/css">
 
@@ -290,8 +293,10 @@
 <script src="view/content/js/jquery.form.js"></script>
 <script src="view/content/js/jquery.validate.min.js"></script>
 <script src="view/content/js/mail-script.js"></script>
+<script src="js/price_rangs.js"></script>
 <!-- custom js -->
 <script src="view/content/js/custom.js"></script>
+
 
 </body>
 </html>
