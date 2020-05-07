@@ -57,20 +57,20 @@
                     <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php">Acceuil</a>
+                                <a class="nav-link" href="index.php" <?php if (!isset($_GET['action'])): ?> style="color:#FC05CB"  <?php endif; ?>>Acceuil</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action=produits">Produits</a>
+                                <a class="nav-link" href="index.php?action=displayArticles" <?php if (@$_GET['action'] == "displayArticles"): ?> style="color:#FC05CB"  <?php endif; ?>>Produits</a>
                             </li>
 
                             <?php if (!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action'] == "logout"))) : ?>
-                                <li class="nav-item"><a class="nav-link" href="index.php?action=login">Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="index.php?action=register" style="color:#FC05CB">S'inscrire</a>
+                                <li class="nav-item"><a class="nav-link" href="index.php?action=login" <?php if (@$_GET['action'] == "login"): ?> style="color:#FC05CB"  <?php endif; ?>>Login</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.php?action=register" <?php if (@$_GET['action'] == "register"): ?> style="color:#FC05CB"  <?php endif; ?>> S'inscrire</a>
                                 </li>
                             <?php else : ?>
                                 <!-- Display the button useful for logout-->
-                                <li><a href="index.php?action=logout">Se déconnecter</a></li>
+                                <li><a href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Se déconnecter</a></li>
                             <?php endif; ?>
                             <!-- after login, we display the user name-->
                             <?php if (isset($_SESSION['userEmailAddress'])) : ?>
