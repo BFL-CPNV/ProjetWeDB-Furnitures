@@ -8,40 +8,47 @@
  */
 
 ?>
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>aranoz</title>
-    <link rel="icon" href="content/img/favicon.png">
+
+
+
+    <link rel="icon" href="view/content/img/favicon.png" type="text/css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="view/content/css/bootstrap.min.css" type="text/css">
     <!-- animate CSS -->
-    <link rel="stylesheet" href="content/css/animate.css">
+    <link rel="stylesheet" href="view/content/css/animate.css" type="text/css">
     <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="content/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="view/content/css/owl.carousel.min.css" type="text/css">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" href="content/css/all.css">
+    <link rel="stylesheet" href="view/content/css/all.css" type="text/css">
     <!-- flaticon CSS -->
-    <link rel="stylesheet" href="content/css/flaticon.css">
-    <link rel="stylesheet" href="content/css/themify-icons.css">
+    <link rel="stylesheet" href="view/content/css/flaticon.css" type="text/css">
+    <link rel="stylesheet" href="view/content/css/themify-icons.css" type="text/css">
     <!-- font awesome CSS -->
-    <link rel="stylesheet" href="content/css/magnific-popup.css">
+    <link rel="stylesheet" href="view/content/css/magnific-popup.css" type="text/css">
     <!-- swiper CSS -->
-    <link rel="stylesheet" href="content/css/slick.css">
+    <link rel="stylesheet" href="view/content/css/slick.css" type="text/css">
     <!-- style CSS -->
-    <link rel="stylesheet" href="content/css/style.css">
+    <link rel="stylesheet" href="view/content/css/style.css" type="text/css">
+
+
 </head>
 <body>
+
 <!--::header part start::-->
 <header class="main_menu home_menu">
+
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-12">
                 <nav class="navbar navbar-expand-lg navbar-light">
-                    <a class="navbar-brand" href="index.php"> <img src="content/img/logo.png" alt="logo"> </a>
+                    <a class="navbar-brand" href="index.php"> <img src="view/content/img/logo.png" alt="logo"> </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse"
                             data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                             aria-expanded="false" aria-label="Toggle navigation">
@@ -165,7 +172,7 @@
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src=content/img/banner_img.png" alt="">
+                                    <img src=view/content/img/banner_img.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -183,7 +190,7 @@
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="content/img/banner_img.png" alt="">
+                                    <img src="view/content/img/banner_img.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -201,7 +208,7 @@
                                     </div>
                                 </div>
                                 <div class="banner_img d-none d-lg-block">
-                                    <img src="content/img/banner_img.png" alt="">
+                                    <img src="view/content/img/banner_img.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -222,7 +229,7 @@
                                 </div>
                             </div>
                         </div> -->
-                </div>
+                    </div>
                     <div class="slider-counter"></div>
                 </div>
             </div>
@@ -342,31 +349,31 @@
 <!--::footer_part end::-->
 
 <!-- jquery plugins here-->
-<script src="content/js/jquery-1.12.1.min.js"></script>
+<script src="view/content/js/jquery-1.12.1.min.js"></script>
 <!-- popper js -->
-<script src="content/js/popper.min.js"></script>
+<script src="view/content/js/popper.min.js"></script>
 <!-- bootstrap js -->
-<script src="content/js/bootstrap.min.js"></script>
+<script src="view/content/js/bootstrap.min.js"></script>
 <!-- easing js -->
-<script src="content/js/jquery.magnific-popup.js"></script>
+<script src="view/content/js/jquery.magnific-popup.js"></script>
 <!-- swiper js -->
-<script src="content/js/swiper.min.js"></script>
+<script src="view/content/js/swiper.min.js"></script>
 <!-- swiper js -->
-<script src="content/js/masonry.pkgd.js"></script>
+<script src="view/content/js/masonry.pkgd.js"></script>
 <!-- particles js -->
-<script src="content/js/owl.carousel.min.js"></script>
-<script src="content/js/jquery.nice-select.min.js"></script>
+<script src="view/content/js/owl.carousel.min.js"></script>
+<script src="view/content/js/jquery.nice-select.min.js"></script>
 <!-- slick js -->
-<script src="content/js/slick.min.js"></script>
-<script src="content/js/jquery.counterup.min.js"></script>
-<script src="content/js/waypoints.min.js"></script>
-<script src="content/js/contact.js"></script>
-<script src="content/js/jquery.ajaxchimp.min.js"></script>
-<script src="content/js/jquery.form.js"></script>
-<script src="content/js/jquery.validate.min.js"></script>
-<script src="content/js/mail-script.js"></script>
+<script src="view/content/js/slick.min.js"></script>
+<script src="view/content/js/jquery.counterup.min.js"></script>
+<script src="view/content/js/waypoints.min.js"></script>
+<script src="view/content/js/contact.js"></script>
+<script src="view/content/js/jquery.ajaxchimp.min.js"></script>
+<script src="view/content/js/jquery.form.js"></script>
+<script src="view/content/js/jquery.validate.min.js"></script>
+<script src="view/content/js/mail-script.js"></script>
 <!-- custom js -->
-<script src="content/js/custom.js"></script>
+<script src="view/content/js/custom.js"></script>
 
 </body>
 </html>
