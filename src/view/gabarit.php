@@ -60,25 +60,25 @@
                     <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php" <?php if (!isset($_GET['action'])): ?> style="color:#FC05CB"  <?php endif; ?>>Acceuil</a>
+                                <a class="nav-link" href="index.php?action=home" <?php if (($_GET['action'] == 'home')): ?> style="color:#FC05CB"  <?php endif; ?>>Acceuil</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link" href="index.php?action=displayArticles" <?php if (@$_GET['action'] == "displayArticles"): ?> style="color:#FC05CB"  <?php endif; ?>>Produits</a>
                             </li>
-
+                            <!--<?php echo 'userEmailAddress : ' . !isset($_SESSION['userEmailAddress']) . ' action : ' . !isset($_GET['action'])?> -->
                             <?php if (!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action'] == "logout"))) : ?>
                                 <li class="nav-item"><a class="nav-link" href="index.php?action=login" <?php if (@$_GET['action'] == "login"): ?> style="color:#FC05CB"  <?php endif; ?>>Login</a></li>
                                 <li class="nav-item"><a class="nav-link" href="index.php?action=register" <?php if (@$_GET['action'] == "register"): ?> style="color:#FC05CB"  <?php endif; ?>> S'inscrire</a>
                                 </li>
                             <?php else : ?>
                                 <!-- Display the button useful for logout-->
-                                <li><a href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Se déconnecter</a></li>
+                                <li class="nav-item"><a class="nav-link" href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Se déconnecter</a></li>
                             <?php endif; ?>
                             <!-- after login, we display the user name-->
                             <?php if (isset($_SESSION['userEmailAddress'])) : ?>
-                                <li>
-                                    <h6>Vous êtes connecté : <?= $_SESSION['userEmailAddress']; ?></h6>
+                                <li class="nav-item" style="padding-left: 200px">
+                                    <a class="nav-link">Vous êtes connecté : <?= $_SESSION['userEmailAddress']; ?></a>
                                 </li>
                             <?php endif; ?>
                         </ul>
@@ -87,81 +87,6 @@
 </header>
 <!-- Header part end-->
 
-<!-- Display the button useful for login and register-->
-
-<!-- ________ SLIDER_____________-->
-<!-- banner part start-->
-<?php if ((@$_GET['action'] == "home") || (!isset($_GET['action']))) : ?>
-    <!-- banner part start-->
-    <section class="banner_part">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <div class="banner_slider owl-carousel">
-                        <div class="single_banner_slider">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-8">
-                                    <div class="banner_text">
-                                        <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="view/content/img/banner_img.png" alt="">
-                                </div>
-                            </div>
-                        </div><div class="single_banner_slider">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-8">
-                                    <div class="banner_text">
-                                        <div class="banner_text_iner">
-                                            <h1>Cloth & Wood
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="view/content/img/banner_img.png" alt="">
-                                </div>
-                            </div>
-                        </div><div class="single_banner_slider">
-                            <div class="row">
-                                <div class="col-lg-5 col-md-8">
-                                    <div class="banner_text">
-                                        <div class="banner_text_iner">
-                                            <h1>Wood & Cloth
-                                                Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="banner_img d-none d-lg-block">
-                                    <img src="view/content/img/banner_img.png" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-counter"></div>
-                </div>
-            </div>
-        </div>
-    </section>
-<?php endif; ?>
-<!-- banner part end-->
-<!-- ________ SLIDER_____________-->
-
-
-<!--__________CONTENU__________-->
 
 <div class="span12" id="divMain">
     <?= $content; ?>

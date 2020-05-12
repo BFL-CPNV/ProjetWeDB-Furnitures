@@ -190,7 +190,8 @@ $rows = 0; // Column count
                         <?php foreach ($snowsResults as $item) :?>
                         <div class="col-lg-4 col-sm-6">
                             <div class="single_product_item">
-                                <img src="<?=$item['photo'] ?>" alt="">
+                                <img src="
+                                <?php if (empty($item['photo'])) : ?> view/content/images/B101_small.jpg <?php else: ?> <?=$item['photo'] ?> <?php endif; ?>" alt="">
                                 <div class="single_product_text">
                                     <h4><?=$item['model'] ?></h4>
                                     <h3>CHF <?=$item['dailyPrice'] ?></h3>

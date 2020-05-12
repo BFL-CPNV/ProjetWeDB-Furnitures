@@ -23,7 +23,7 @@ ob_start();
                         <div class="login_part_text_iner">
                             <h2>Vous avez déjà un compte ?</h2>
                             <p>Cliquez sur le bouton ci-dessous</p>
-                            <a href="index.php?action=login" class="btn_3">Create an Account</a>
+                            <a href="index.php?action=login" class="btn_3">Se connecter</a>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ ob_start();
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
                             <h3>S'inscrire</h3>
-                            <form class="row contact_form" action="index.php?action=login" method="POST" novalidate="novalidate">
+                            <form class="row contact_form" action="index.php?action=register" method="POST" novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
                                     <input type="email" class="form-control" id="name" name="inputUserEmailAddress" value=""
                                            placeholder="Email address" required>
