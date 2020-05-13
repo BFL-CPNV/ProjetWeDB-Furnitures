@@ -191,10 +191,10 @@ $rows = 0; // Column count
                         <div class="col-lg-4 col-sm-6">
                             <div class="single_product_item">
                                 <img src="
-                                <?php if (empty($item['photo'])) : ?> view/content/images/B101_small.jpg <?php else: ?> <?=$item['photo'] ?> <?php endif; ?>" alt="">
+                                <?php if (empty($item['photo'])) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?=$item['photo'] ?> <?php endif; ?>" alt="">
                                 <div class="single_product_text">
-                                    <h4><?=$item['model'] ?></h4>
-                                    <h3>CHF <?=$item['dailyPrice'] ?></h3>
+                                    <h4><?=$item['brand'] ?></h4>
+                                    <h3>CHF <?=$item['price'] ?></h3>
                                     <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                 </div>
                             </div>
