@@ -18,6 +18,9 @@ if (isset($_GET['action'])) {
         case 'displayArticles' :
             displayArticles();
             break;
+        case 'displaySingleArticle' :
+            displaySingleArticle();
+            break;
         case 'home' :
             home();
             break;

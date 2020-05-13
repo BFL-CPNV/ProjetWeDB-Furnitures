@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="view/content/css/animate.css" type="text/css">
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="view/content/css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="view/content/css/lightslider.min.css">
     <!-- nice select CSS -->
     <link rel="stylesheet" href="view/content/css/nice-select.css" type="text/css">
     <!-- font awesome CSS -->
@@ -209,21 +210,26 @@
 <script src="view/content/js/swiper.min.js"></script>
 <!-- swiper js -->
 <script src="view/content/js/masonry.pkgd.js"></script>
+<script src="view/content/js/lightslider.min.js"></script>
+<script src="view/content/js/masonry.pkgd.js"></script>
 <!-- particles js -->
 <script src="view/content/js/owl.carousel.min.js"></script>
 <script src="view/content/js/jquery.nice-select.min.js"></script>
 <!-- slick js -->
 <script src="view/content/js/slick.min.js"></script>
 <script src="view/content/js/jquery.counterup.min.js"></script>
+<script src="view/content/js/swiper.jquery.js"></script>
 <script src="view/content/js/waypoints.min.js"></script>
 <script src="view/content/js/contact.js"></script>
 <script src="view/content/js/jquery.ajaxchimp.min.js"></script>
 <script src="view/content/js/jquery.form.js"></script>
 <script src="view/content/js/jquery.validate.min.js"></script>
 <script src="view/content/js/mail-script.js"></script>
-<script src="js/price_rangs.js"></script>
+<script src="view/content/js/price_rangs.js"></script>
+<script src="view/content/js/stellar.js"></script>
 <!-- custom js -->
 <script src="view/content/js/custom.js"></script>
+<script src="view/content/js/theme.js"></script>
 
 
 </body>

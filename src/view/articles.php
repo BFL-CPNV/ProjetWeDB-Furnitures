@@ -131,15 +131,15 @@ $rows = 0; // Column count
                             <div class="widgets_inner">
                                 <div class="range_item">
                                     <!-- <div id="slider-range"></div> -->
-                                    <input type="text" class="js-range-slider" value="" />
+                                    <input type="text" class="js-range-slider" value=""/>
                                     <div class="d-flex">
                                         <div class="price_text">
                                             <p>Price :</p>
                                         </div>
                                         <div class="price_value d-flex justify-content-center">
-                                            <input type="text" class="js-input-from" id="amount" readonly />
+                                            <input type="text" class="js-input-from" id="amount" readonly/>
                                             <span>to</span>
-                                            <input type="text" class="js-input-to" id="amount" readonly />
+                                            <input type="text" class="js-input-to" id="amount" readonly/>
                                         </div>
                                     </div>
                                 </div>
@@ -187,18 +187,22 @@ $rows = 0; // Column count
                     </div>
 
                     <div class="row align-items-center latest_product_inner">
-                        <?php foreach ($snowsResults as $item) :?>
-                        <div class="col-lg-4 col-sm-6">
-                            <div class="single_product_item">
-                                <img src="
-                                <?php if (empty($item['photo'])) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?=$item['photo'] ?> <?php endif; ?>" alt="">
-                                <div class="single_product_text">
-                                    <h4><?=$item['brand'] ?></h4>
-                                    <h3>CHF <?=$item['price'] ?></h3>
-                                    <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
-                                </div>
+                        <?php foreach ($snowsResults as $item) : ?>
+                            <div class="col-lg-4 col-sm-6">
+                                <a href="index.php?action=displaySingleArticle&code=<?= $item['code'] ?>"
+                                   style="cursor: pointer">
+                                    <div class="single_product_item">
+                                        <img src="
+                                <?php if (empty($item['photo'])) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?= $item['photo'] ?> <?php endif; ?>"
+                                             alt="">
+                                        <div class="single_product_text">
+                                            <h4><?= $item['brand'] ?></h4>
+                                            <h3>CHF <?= $item['price'] ?></h3>
+                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                        </div>
+                                    </div>
+                                </a>
                             </div>
-                        </div>
                         <?php endforeach; ?>
 
                         <div class="col-lg-12">

@@ -10,14 +10,26 @@
 /**
  * @brief This function is designed to display Articles
  */
+require_once "model/articlesManager.php";
+
 function displayArticles()
 {
-    require_once "model/articlesManager.php";
     try {
         $snowsResults = getArticles();
     } catch (ModelDataBaseException $ex) {
         $articleErrorMessage = "Nous rencontrons temporairement un problème technique pour afficher nos produits. Désolé du dérangement !";
     } finally {
         require "view/articles.php";
+    }
+}
+function displaySingleArticle()
+{
+    try {
+        $code = $_GET['code'];
+        $singleArticle = getSingleArticleByCode($code);
+    } catch (ModelDataBaseException $ex) {
+        $articleErrorMessage = "Nous rencontrons temporairement un problème technique pour afficher nos produits. Désolé du dérangement !";
+    } finally {
+        require "view/displaySingleArticle.php";
     }
 }

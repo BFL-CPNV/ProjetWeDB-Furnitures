@@ -12,12 +12,19 @@
  * @return array : containing all information about the articles. Array can be empty.
  * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
  */
+
+require_once 'model/dbConnector.php';
+
 function getArticles()
 {
 
     $snowsQuery = 'SELECT code, brand, material, price, qtyAvailable, photo, active FROM furnitures';
 
-    require_once 'model/dbConnector.php';
-
     return executeQuerySelect($snowsQuery);
+}
+
+function getSingleArticleByCode($code){
+    $articleQuery = "SELECT code, brand, material, price, qtyAvailable, photo, active, description FROM furnitures where code = '$code';";
+
+    return executeQuerySelect($articleQuery);
 }
