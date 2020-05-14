@@ -13,9 +13,9 @@
 
 
 -- Dumping database structure for snows
-DROP DATABASE IF EXISTS `snows`;
-CREATE DATABASE IF NOT EXISTS `snows` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
-USE `snows`;
+DROP DATABASE IF EXISTS `furnitures`;
+CREATE DATABASE IF NOT EXISTS `furnitures` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci */;
+USE `furnitures`;
 
 -- Dumping structure for table snows.snows
 DROP TABLE IF EXISTS `snows`;

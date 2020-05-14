@@ -1,5 +1,4 @@
-
-USE snows;
+USE furnitures;
 
 /* Renames table */
 RENAME TABLE snows TO furnitures;
