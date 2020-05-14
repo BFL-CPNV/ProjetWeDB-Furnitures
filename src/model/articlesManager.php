@@ -24,7 +24,7 @@ function getArticles()
 }
 
 function getSingleArticleByCode($code){
-    $articleQuery = "SELECT code, brand, material, price, qtyAvailable, photo, active, description FROM furnitures where code = '$code';";
+    $articleQuery = "SELECT code, brand, material, price, qtyAvailable, photo, active, description, longDescription FROM furnitures where code = '$code';";
 
     return executeQuerySelect($articleQuery);
 }
