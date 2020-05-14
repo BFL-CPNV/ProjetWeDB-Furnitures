@@ -1,5 +1,3 @@
-/* ATTENTION CE SCRIPT N'AS JAMAIS ETE EXUCUTE EN UNE FOIS, IL A TOUJNOURS ETE EXECUTE EN PLUSIEURS PARTIES */
-
 
 USE snows;
 
@@ -26,10 +24,6 @@ ADD material varchar(20) NOT NULL;
 
 ALTER table furnitures
 ADD longDescription longtext NULL;
-
-
-SELECT code, brand, material, price, qtyAvailable, photo, active FROM furnitures
-where code = 'A00';
 
 
 /* ADD DATA */
