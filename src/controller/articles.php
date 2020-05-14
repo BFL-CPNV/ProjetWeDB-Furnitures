@@ -22,6 +22,10 @@ function displayArticles()
         require "view/articles.php";
     }
 }
+
+/**
+ * @brief This function is designed to display one article from the code given
+ */
 function displaySingleArticle()
 {
     try {

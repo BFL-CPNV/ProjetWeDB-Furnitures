@@ -23,6 +23,11 @@ function getArticles()
     return executeQuerySelect($snowsQuery);
 }
 
+/**
+ * @brief This function is designed to get on particular article thank to the code
+ * @return array : containing all information about the articles.
+ * @throws ModelDataBaseException : will be throw if something goes wrong with the database opening process
+ */
 function getSingleArticleByCode($code){
     $articleQuery = "SELECT code, brand, material, price, qtyAvailable, photo, active, description, longDescription FROM furnitures where code = '$code';";
 
