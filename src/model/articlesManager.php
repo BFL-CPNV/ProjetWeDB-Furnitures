@@ -4,7 +4,8 @@
  * @brief     This model is designed to implement the articles business logic
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY
- * @version   13-APR-2020
+ * @author    Updated by Adam.GRUBER
+ * @version   14-MAI-2020
  */
 
 /**
