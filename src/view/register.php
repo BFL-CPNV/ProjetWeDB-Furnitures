@@ -52,7 +52,7 @@ ob_start();
                                                 href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/"> CGU et vie
                                             privée</a>.</p>
                                     <button type="submit" value="submit" class="btn_3">
-                                        log in
+                                        Créer un compte
                                     </button>
                                     <a class="lost_pass" href="#">forget password?</a>
                                 </div>
