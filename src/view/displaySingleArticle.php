@@ -40,8 +40,8 @@ ob_start();
                             $url = $singleArticle[0]['photo'];
                             $url = substr_replace($url, $i + 1, -5, 1)
                             ?>
-                        <div data-thumb="<?php if (empty($url)) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>">
-                            <img src="<?php if (empty($url)) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>"/>
+                        <div data-thumb="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>">
+                            <img src="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>"/>
                         </div>
                         <?php endfor; ?>
                     </div>
