@@ -35,18 +35,15 @@ ob_start();
             <div class="col-lg-7 col-xl-7">
                 <div class="product_slider_img">
                     <div id="vertical">
-                        <div data-thumb="<?php if (empty($singleArticle[0]['photo'])) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?= $singleArticle[0]['photo'] ?> <?php endif; ?>">
-                            <img src="<?php if (empty($singleArticle[0]['photo'])) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?= $singleArticle[0]['photo'] ?> <?php endif; ?>"/>
+                        <?php for ($i = 0; $i <= 3; $i++) :?>
+                        <?php
+                            $url = $singleArticle[0]['photo'];
+                            $url = substr_replace($url, $i + 1, -5, 1)
+                            ?>
+                        <div data-thumb="<?php if (empty($url)) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>">
+                            <img src="<?php if (empty($url)) : ?> view/content/Furnitures/default/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>"/>
                         </div>
-                        <div data-thumb="view/content/img/product/single-product/product_1.png">
-                            <img src="view/content/img/product/single-product/product_1.png" />
-                        </div>
-                        <div data-thumb="view/content/img/product/single-product/product_1.png">
-                            <img src="view/content/img/product/single-product/product_1.png" />
-                        </div>
-                        <div data-thumb="view/content/img/product/single-product/product_1.png">
-                            <img src="view/content/img/product/single-product/product_1.png" />
-                        </div>
+                        <?php endfor; ?>
                     </div>
                 </div>
             </div>
