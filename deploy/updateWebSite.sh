@@ -6,7 +6,7 @@
 
 #!/bin/bash
 
-projectNameFolder='projetwebbdd_startcode_2019_2020'
+projectNameFolder='ProjetWeDB-Furnitures'
 webSitePathFolder='/var/www/html'
 
 # update the code
