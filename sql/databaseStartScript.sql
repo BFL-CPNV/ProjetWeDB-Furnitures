@@ -19,7 +19,7 @@ USE `furnitures`;
 
 -- Dumping structure for table snows.snows
 DROP TABLE IF EXISTS `snows`;
-CREATE TABLE IF NOT EXISTS `snows` (
+CREATE TABLE IF NOT EXISTS `snows` ( /*TODO ERROR http://prntscr.com/sp7ajf */
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `code` varchar(4) NOT NULL,
   `brand` varchar(20) NOT NULL,
