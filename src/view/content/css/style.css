@@ -2248,7 +2248,7 @@ ul {
 .main_menu .cart i:after {
   position: absolute;
   border-radius: 50%;
-  background-color: #f13d80;
+  background-color: rgba(241, 61, 128, 0);
   width: 14px;
   height: 14px;
   right: -8px;
