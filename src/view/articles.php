@@ -198,7 +198,7 @@ $rows = 0; // Column count
                                         <div class="single_product_text">
                                             <h4><?= $item['brand'] ?></h4>
                                             <h3>CHF <?= $item['price'] ?></h3>
-                                            <a href="#" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="index.php?action=addItemCart&code=<?=$item['code']?>&quantityToAdd=1" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                         </div>
                                     </div>
                                 </a>

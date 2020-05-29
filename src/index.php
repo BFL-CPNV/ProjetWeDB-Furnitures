@@ -11,6 +11,7 @@ session_start();
 require "controller/articles.php";
 require "controller/navigation.php";
 require "controller/users.php";
+require "controller/cart.php";
 
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
@@ -20,6 +21,12 @@ if (isset($_GET['action'])) {
             break;
         case 'displaySingleArticle' :
             displaySingleArticle();
+            break;
+        case 'displayCart' :
+            displayCart();
+            break;
+        case 'addItemCart' :
+            addItemCart();
             break;
         case 'home' :
             home();

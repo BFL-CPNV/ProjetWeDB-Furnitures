@@ -86,8 +86,7 @@
                     </div>
                     <div class="hearer_icon d-flex">
                         <div class="dropdown cart">
-                            <a class="dropdown-toggle" href="#" id="navbarDropdown3" role="button"
-                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="dropdown-toggle" href="index.php?action=displayCart" id="navbarDropdown3" role="button">
                                 <i class="fas fa-cart-plus"></i>
                             </a>
                         </div>
