@@ -7,11 +7,17 @@
  */
 
 class Cart{
-    private $totalPrice;
+
     public $numberOfItems;
-    private $items = array();
+    private $test = "123123";
+    private $totalPrice = "2";
+    private $items = array("London", "Paris", "New York");
 
     public function GetEveryItems(){
+
         return $this->items;
+    }
+    private function AddObject(){
+
     }
 }

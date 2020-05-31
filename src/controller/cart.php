@@ -7,10 +7,14 @@
  */
 
 require_once "model/cartManager.php";
+require_once "model/Cart.php";
 
 
 function displayCart(){
-    $articles = displayItems();
-    $test = $articles->numberOfItems;
-    echo $test;
+    $articles = displayItems(@$_SESSION['cart']);
+}
+
+function addItemCart(){
+    $cart = getCart(@$_SESSION['cart']);
+
 }

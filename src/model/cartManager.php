@@ -7,17 +7,25 @@
  */
 
 require_once "model/Cart.php";
+require_once "controller/cart.php";
 
 
-function displayItems()
+function displayItems($cart)
 {
-    $cart = $_SESSION['cart'];
-
-    return $cart;
+    if (isset($cart)){
+        $cart = unserialize($cart);
+        return $cart->GetEveryItems();
+    } else{
+        return "No session";
+    }
 }
 
-function updateCart()
-{
-    $cart = new Cart();
-    $_SESSION['cart'] = $cart;
+function getCart($cart){
+    if (!isset($cart)){
+        $cart = new Cart();
+        $_SESSION['cart'] = serialize($cart);
+        return $_SESSION['cart'];
+    }
+
+    return $_SESSION['cart'];
 }
