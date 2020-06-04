@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @file      index.php
  * @brief     This file is the rooter managing the link with controllers.
@@ -26,6 +27,7 @@ if (isset($_GET['action'])) {
             displayCart($_SESSION['cart']);
             break;
         case 'addItemCart' :
+
             addItemCart();
             break;
         case 'home' :

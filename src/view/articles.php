@@ -195,11 +195,20 @@ $rows = 0; // Column count
                                         <img src="
                                 <?php if (empty($item['photo'])) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $item['photo'] ?> <?php endif; ?>"
                                              alt="">
+                                        <form action="index.php?action=addItemCart" method="post" id="all-articles-form">
+                                            <input type="text" value="<?= $item['code'] ?>" name="input-code">
+                                            <input type="hidden" value="1" name="input-quantityToAdd">
                                         <div class="single_product_text">
                                             <h4><?= $item['brand'] ?></h4>
                                             <h3>CHF <?= $item['price'] ?></h3>
-                                            <a href="index.php?action=addItemCart&code=<?=$item['code']?>&quantityToAdd=1" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
+                                            <a href="javascript: submitform()" class="add_cart">+ add to cart<i class="ti-heart"></i></a>
                                         </div>
+                                        </form>
+                                        <script type="text/javascript">
+                                            function submitform() {
+                                                document.forms["all-articles-form"].submit();
+                                            }
+                                        </script>
                                     </div>
                                 </a>
                             </div>

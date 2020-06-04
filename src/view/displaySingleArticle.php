@@ -35,14 +35,14 @@ ob_start();
             <div class="col-lg-7 col-xl-7">
                 <div class="product_slider_img">
                     <div id="vertical">
-                        <?php for ($i = 0; $i <= 3; $i++) :?>
-                        <?php
+                        <?php for ($i = 0; $i <= 3; $i++) : ?>
+                            <?php
                             $url = $singleArticle[0]['photo'];
                             $url = substr_replace($url, $i + 1, -5, 1)
                             ?>
-                        <div data-thumb="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>">
-                            <img src="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>"/>
-                        </div>
+                            <div data-thumb="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>">
+                                <img src="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>"/>
+                            </div>
                         <?php endfor; ?>
                     </div>
                 </div>
@@ -58,19 +58,29 @@ ob_start();
                                 <span>Category</span> : Household</a>
                         </li>
                         <li>
-                            <a href="#"> <span>Availibility</span> <?php if ($singleArticle[0]['active']) : ?> En stock <?php else: ?> Pas en stock <?php endif; ?> </a>
+                            <a href="#">
+                                <span>Availibility</span> <?php if ($singleArticle[0]['active']) : ?> En stock <?php else: ?> Pas en stock <?php endif; ?>
+                            </a>
                         </li>
                     </ul>
                     <p><?= $singleArticle[0]['description'] ?></p>
-                    <div class="card_area d-flex justify-content-between align-items-center">
-                        <div class="product_count">
-                            <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                            <input class="input-number" type="text" value="1" min="0" max="10">
-                            <span class="number-increment"> <i class="ti-plus"></i></span>
+                    <form action="index.php?action=addItemCart" method="post" id="quantity-form"
+                          style="display: inline-block;">
+                        <div class="card_area d-flex justify-content-between align-items-center">
+
+                            <input type="hidden" value="<?= $singleArticle[0]['code'] ?>" name="input-code">
+                            <div class="product_count">
+                                <span class="inumber-decrement"> <i class="ti-minus"></i></span>
+                                <input class="input-number" type="text" value="1" min="0" max="10"
+                                       name="input-quantityToAdd">
+                                <span class="number-increment"> <i class="ti-plus"></i></span>
+                            </div>
+                            <a href="#"
+                               onclick="document.getElementById('quantity-form').submit();" class="btn_3">add to
+                                cart</a>
+                            <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
                         </div>
-                        <a href="#" class="btn_3">add to cart</a>
-                        <a href="#" class="like_us"> <i class="ti-heart"></i> </a>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -87,15 +97,18 @@ ob_start();
                    aria-selected="true">Description</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab"
+                   aria-controls="profile"
                    aria-selected="false">Specification</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab"
+                   aria-controls="contact"
                    aria-selected="false">Comments</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab" aria-controls="review"
+                <a class="nav-link active" id="review-tab" data-toggle="tab" href="#review" role="tab"
+                   aria-controls="review"
                    aria-selected="false">Reviews</a>
             </li>
         </ul>
@@ -184,7 +197,7 @@ ob_start();
                             <div class="review_item">
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="view/content/img/product/single-product/review-1.png" alt="" />
+                                        <img src="view/content/img/product/single-product/review-1.png" alt=""/>
                                     </div>
                                     <div class="media-body">
                                         <h4>Blake Ruiz</h4>
@@ -202,7 +215,7 @@ ob_start();
                             <div class="review_item reply">
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="view/content/img/product/single-product/review-2.png" alt="" />
+                                        <img src="view/content/img/product/single-product/review-2.png" alt=""/>
                                     </div>
                                     <div class="media-body">
                                         <h4>Blake Ruiz</h4>
@@ -220,7 +233,7 @@ ob_start();
                             <div class="review_item">
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="view/content/img/product/single-product/review-3.png" alt="" />
+                                        <img src="view/content/img/product/single-product/review-3.png" alt=""/>
                                     </div>
                                     <div class="media-body">
                                         <h4>Blake Ruiz</h4>
@@ -244,17 +257,20 @@ ob_start();
                                   novalidate="novalidate">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="Your Full name" />
+                                        <input type="text" class="form-control" id="name" name="name"
+                                               placeholder="Your Full name"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" />
+                                        <input type="email" class="form-control" id="email" name="email"
+                                               placeholder="Email Address"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="number" name="number" placeholder="Phone Number" />
+                                        <input type="text" class="form-control" id="number" name="number"
+                                               placeholder="Phone Number"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -336,7 +352,7 @@ ob_start();
                             <div class="review_item">
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="view/content/img/product/single-product/review-1.png" alt="" />
+                                        <img src="view/content/img/product/single-product/review-1.png" alt=""/>
                                     </div>
                                     <div class="media-body">
                                         <h4>Blake Ruiz</h4>
@@ -357,7 +373,7 @@ ob_start();
                             <div class="review_item">
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="view/content/img/product/single-product/review-2.png" alt="" />
+                                        <img src="view/content/img/product/single-product/review-2.png" alt=""/>
                                     </div>
                                     <div class="media-body">
                                         <h4>Blake Ruiz</h4>
@@ -378,7 +394,7 @@ ob_start();
                             <div class="review_item">
                                 <div class="media">
                                     <div class="d-flex">
-                                        <img src="view/content/img/product/single-product/review-3.png" alt="" />
+                                        <img src="view/content/img/product/single-product/review-3.png" alt=""/>
                                     </div>
                                     <div class="media-body">
                                         <h4>Blake Ruiz</h4>
@@ -430,25 +446,30 @@ ob_start();
                                 </li>
                             </ul>
                             <p>Outstanding</p>
-                            <form class="row contact_form" action="contact_process.php" method="post" novalidate="novalidate">
+                            <form class="row contact_form" action="contact_process.php" method="post"
+                                  novalidate="novalidate">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="name" placeholder="Your Full name" />
+                                        <input type="text" class="form-control" name="name"
+                                               placeholder="Your Full name"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="email" placeholder="Email Address" />
+                                        <input type="email" class="form-control" name="email"
+                                               placeholder="Email Address"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="number" placeholder="Phone Number" />
+                                        <input type="text" class="form-control" name="number"
+                                               placeholder="Phone Number"/>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <textarea class="form-control" name="message" rows="1" placeholder="Review"></textarea>
+                                        <textarea class="form-control" name="message" rows="1"
+                                                  placeholder="Review"></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-right">

@@ -18,11 +18,16 @@ function displayCart($cart){
 }
 
 function addItemCart(){
+
+    $quantityToAdd = $_POST['input-quantityToAdd'];
+    $code = $_POST['input-code'];
+
+    echo $code . '<br>' . $quantityToAdd;
     if (!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = addItemToCart(null, $_GET['code'], $_GET['quantityToAdd']);
+        $_SESSION['cart'] = addItemToCart(null, $code, $quantityToAdd);
     }
     else{
-        $_SESSION['cart'] = addItemToCart($_SESSION['cart'], $_GET['code'], $_GET['quantityToAdd']);
+        $_SESSION['cart'] = addItemToCart($_SESSION['cart'], $code, $quantityToAdd);
     }
 
     displayCart($_SESSION['cart']);
