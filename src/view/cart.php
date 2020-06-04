@@ -34,7 +34,7 @@ $title = "Rent A Snow - Home";
             <div class="table-responsive">
                 <table class="table">
                     <?php if (!isset($_SESSION['cart']) || $articles == false || count($articles) == 0) : ?>
-                    Empty cart
+                        <h2 style="text-align: center">Empty cart</h2>
                     <?php else: ?>
                     <?php foreach ($articles as $article) :?>
                     <thead>
@@ -97,8 +97,8 @@ $title = "Rent A Snow - Home";
                     <?php endif; ?>
                 </table>
                 <div class="checkout_btn_inner float-right">
-                    <a class="btn_1" href="#" >Continue Shopping</a>
-                    <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+                    <a class="btn_1" href= >Continue Shopping</a>
+                    <a class="btn_1 checkout_btn_1" href="index.php?action=checkout">Proceed to checkout</a>
                 </div>
             </div>
         </div>

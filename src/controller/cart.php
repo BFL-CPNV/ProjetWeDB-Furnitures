@@ -11,10 +11,14 @@ require "model/cartManager.php";
 
 
 function displayCart($cart){
+    if (!isset($cart)){
+        require "view/cart.php";
+    }else{
+        $articles = displayItems($cart);
+        $totalPrice = displayTotalPrice($_SESSION['cart']);
+        require_once "view/cart.php";
+    }
 
-    $articles = displayItems($cart);
-    $totalPrice = displayTotalPrice($_SESSION['cart']);
-    require_once "view/cart.php";
 }
 
 function addItemCart(){
@@ -30,4 +34,14 @@ function addItemCart(){
     }
 
     displayCart($_SESSION['cart']);
+}
+
+function checkout(){
+    if (!isset($_SESSION['userEmailAddress'])){
+        require "view/login.php";
+    }
+    else{
+        unset($_SESSION['cart']);
+        displayCart(null);
+    }
 }
