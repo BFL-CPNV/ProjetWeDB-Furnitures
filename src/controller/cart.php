@@ -19,10 +19,9 @@ function displayCart($cart){
 
 function addItemCart(){
 
-    $quantityToAdd = $_POST['input-quantityToAdd'];
-    $code = $_POST['input-code'];
+    $quantityToAdd = @$_POST['input-quantityToAdd'];
+    $code = @$_POST['input-code'];
 
-    echo $code . '<br>' . $quantityToAdd;
     if (!isset($_SESSION['cart'])) {
         $_SESSION['cart'] = addItemToCart(null, $code, $quantityToAdd);
     }

@@ -27,7 +27,6 @@ if (isset($_GET['action'])) {
             displayCart($_SESSION['cart']);
             break;
         case 'addItemCart' :
-
             addItemCart();
             break;
         case 'home' :
