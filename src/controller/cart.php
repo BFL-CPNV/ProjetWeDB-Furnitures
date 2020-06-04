@@ -6,15 +6,24 @@
  * Time: 12:10
  */
 
-require_once "model/cartManager.php";
-require_once "model/Cart.php";
+require "model/cartManager.php";
 
 
-function displayCart(){
-    $articles = displayItems(@$_SESSION['cart']);
+
+function displayCart($cart){
+
+    $articles = displayItems($cart);
+    $totalPrice = displayTotalPrice($_SESSION['cart']);
+    require_once "view/cart.php";
 }
 
 function addItemCart(){
-    $cart = getCart(@$_SESSION['cart']);
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = addItemToCart(null, $_GET['code'], $_GET['quantityToAdd']);
+    }
+    else{
+        $_SESSION['cart'] = addItemToCart($_SESSION['cart'], $_GET['code'], $_GET['quantityToAdd']);
+    }
 
+    displayCart($_SESSION['cart']);
 }

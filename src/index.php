@@ -6,7 +6,7 @@
  * @author    Updated by Nicolas.GLASSEY
  * @version   13-APR-2020
  */
-
+require "model/Cart.php";
 session_start();
 require "controller/articles.php";
 require "controller/navigation.php";
@@ -23,7 +23,7 @@ if (isset($_GET['action'])) {
             displaySingleArticle();
             break;
         case 'displayCart' :
-            displayCart();
+            displayCart($_SESSION['cart']);
             break;
         case 'addItemCart' :
             addItemCart();

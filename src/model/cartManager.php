@@ -9,23 +9,20 @@
 require_once "model/Cart.php";
 require_once "controller/cart.php";
 
-
 function displayItems($cart)
 {
-    if (isset($cart)){
-        $cart = unserialize($cart);
-        return $cart->GetEveryItems();
-    } else{
-        return "No session";
-    }
+    return $cart->GetEveryItems();
 }
 
-function getCart($cart){
-    if (!isset($cart)){
-        $cart = new Cart();
-        $_SESSION['cart'] = serialize($cart);
-        return $_SESSION['cart'];
-    }
+function displayTotalPrice($cart){
+    return $cart->GetTotalPrice();
+}
 
-    return $_SESSION['cart'];
+function addItemToCart($cart, $code, $quantityToAdd)
+{
+    if ($cart == null){
+        $cart = new Cart();
+    }
+    $cart->AddItemToCart($code, $quantityToAdd);
+    return $cart;
 }

@@ -8,7 +8,6 @@
 
 ob_start();
 $title = "Rent A Snow - Home";
-
 ?>
 
 
@@ -34,7 +33,7 @@ $title = "Rent A Snow - Home";
         <div class="cart_inner">
             <div class="table-responsive">
                 <table class="table">
-                    <?php if (!isset($_SESSION['cart'])) : ?>
+                    <?php if (!isset($_SESSION['cart']) || $articles == false || count($articles) == 0) : ?>
                     Empty cart
                     <?php else: ?>
                     <?php foreach ($articles as $article) :?>
@@ -51,28 +50,26 @@ $title = "Rent A Snow - Home";
                         <td>
                             <div class="media">
                                 <div class="d-flex">
-                                    <img src="img/product/single-product/cart-1.jpg" alt="" />
+                                    <img src="<?php if (empty($article['img'])) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $article['img'] ?> <?php endif; ?>" alt="" style="height: 100px"/>
                                 </div>
                                 <div class="media-body">
-                                    <p>----</p>
+                                    <p><?= $article['code'] ?></p>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <h5>$000.00</h5>
+                            <h5><?= $article['price'] ?></h5>
                         </td>
                         <td>
                             <div class="product_count">
-                                <span class="input-number-decrement"> <i class="ti-angle-down"></i></span>
-                                <input class="input-number" type="text" value="1" min="0" max="10">
-                                <span class="input-number-increment"> <i class="ti-angle-up"></i></span>
+                                <h5><?= $article['quantity'] ?></h5>
                             </div>
                         </td>
                         <td>
-                            <h5>$000.00</h5>
+                            <h5><?= $article['totalPrice'] ?></h5>
                         </td>
                     </tr>
-
+                        <?php endforeach; ?>
                     <tr class="bottom_button">
                         <td>
                             <a class="btn_1" href="#">Update Cart</a>
@@ -92,15 +89,15 @@ $title = "Rent A Snow - Home";
                             <h5>Subtotal</h5>
                         </td>
                         <td>
-                            <h5>$2160.00</h5>
+                            <h5><?= $totalPrice ?></h5>
                         </td>
                     </tr>
                     </tbody>
-                    <?php endforeach; ?>
+
                     <?php endif; ?>
                 </table>
                 <div class="checkout_btn_inner float-right">
-                    <a class="btn_1" href="#">Continue Shopping</a>
+                    <a class="btn_1" href="#" >Continue Shopping</a>
                     <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
                 </div>
             </div>
