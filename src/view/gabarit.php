@@ -183,7 +183,7 @@
 
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
-                                    <a href="#" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    <a href="index.php?action=checkout" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                         Check Out
                                     </a>
                                 </div>
