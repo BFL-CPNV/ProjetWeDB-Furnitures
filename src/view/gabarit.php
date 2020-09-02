@@ -146,7 +146,9 @@
 
                                         <span class="header-cart-item-info">
 											<?= $item['quantity'] ?> x $ <?= $item['price']?>
+                                            <span style="margin-left: 25px;font-weight: 900; font-size: 15px">$<?= $item['quantity'] * $item['price']?> </span>
 										</span>
+
                                     </div>
                                 </li>
                                 <?php endforeach; ?>
