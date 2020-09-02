@@ -117,15 +117,17 @@
 
                         <!-- Header cart noti -->
                         <div class="header-cart header-dropdown">
+                            <?php if (@$_SESSION['cart'] == null) :?>
+                                <h2>Go Buy Items</h2>
+                            <?php else :?>
                             <ul class="header-cart-wrapitem">
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
                                         <img src="view/content_2/images/item-cart-01.jpg" alt="IMG">
                                     </div>
-
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
-                                            White Shirt With Pleat Detail Back
+                                            <?php $_SESSION['cart']?>
                                         </a>
 
                                         <span class="header-cart-item-info">
@@ -174,7 +176,7 @@
                             <div class="header-cart-buttons">
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
-                                    <a href="cart.html" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    <a href="index.php?action=displayCart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                         View Cart
                                     </a>
                                 </div>
@@ -187,6 +189,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php endif ?>
                     </div>
                 </nav>
             </div>
