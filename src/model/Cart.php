@@ -51,11 +51,14 @@ class Cart
         if ($quantityToDelete == null){
             foreach ($this->items as $item){
                 if ($item['code'] == $code){
-                    unset($this->items[$index]);
+                    if ($this->numberOfItems == 1) unset($_SESSION['cart']);
+                    else unset($this->items[$index]);
                 }
                 $index++;
             }
         }
+        $this->ComputeNumberOfItems();
+        $this->ComputeTotalPrice();
 
         $test = $this->items;
     }
@@ -100,5 +103,10 @@ class Cart
         foreach ($this->items as $item) {
             $this->totalPrice += $item['totalPrice'];
         }
+    }
+
+    private function ComputeNumberOfItems(){
+        $this->numberOfItems = 0;
+        $this->numberOfItems = count($this->items);
     }
 }

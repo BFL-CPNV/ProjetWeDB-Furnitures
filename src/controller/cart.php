@@ -38,7 +38,7 @@ function addItemCart(){
 
 function deleteItemCart(){
     $itemCode = @$_GET['code'];
-    $quantity = @$_GET['code'];
+    $quantity = @$_GET['quantity'];
     deleteItemInCart($_SESSION['cart'], $itemCode, $quantity);
 }
 
