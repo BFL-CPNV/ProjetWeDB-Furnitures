@@ -113,12 +113,24 @@
                     </div>
                     <div class="header-wrapicon2">
                         <img src="view/content_2/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
-                        <span class="header-icons-noti">2</span>
+                        <span class="header-icons-noti">
+                            <?php if (@$_SESSION['cart'] == null) :?>
+                            0
+                            <?php else :?>
+                            <?=$_SESSION['cart']->numberOfItems?></span>
+                        <?php endif?>
 
                         <!-- Header cart noti -->
                         <div class="header-cart header-dropdown">
                             <?php if (@$_SESSION['cart'] == null) :?>
-                                <h2>Go Buy Items</h2>
+                                <h2 style="color: black">Go Buy Items</h2>
+                                <div class="header-cart-wrapbtn" style="margin-top: 15px">
+                                    <!-- Button -->
+                                    <a href="index.php?action=displayArticles" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                        Produits
+                                    </a>
+                                </div>
+
                             <?php else :?>
                             <ul class="header-cart-wrapitem">
                                 <li class="header-cart-item">

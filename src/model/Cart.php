@@ -38,6 +38,8 @@ class Cart
         } else {
             $this->AddItemToArray($item, $quantityToAdd);
         }
+
+        $this->numberOfItems+= $quantityToAdd;
         $this->ComputeTotalPrice();
 
     }
