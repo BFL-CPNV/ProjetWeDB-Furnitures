@@ -36,6 +36,12 @@ function addItemCart(){
     displayCart($_SESSION['cart']);
 }
 
+function deleteItemCart(){
+    $itemCode = @$_GET['code'];
+    $quantity = @$_GET['code'];
+    deleteItemInCart($_SESSION['cart'], $itemCode, $quantity);
+}
+
 function checkout(){
     if (!isset($_SESSION['userEmailAddress'])){
         require "view/login.php";

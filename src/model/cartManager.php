@@ -26,3 +26,7 @@ function addItemToCart($cart, $code, $quantityToAdd)
     $cart->AddItemToCart($code, $quantityToAdd);
     return $cart;
 }
+
+function deleteItemInCart($cart, $code, $quantity){
+    $cart->DeleteItemToCart($code,$quantity);
+}
