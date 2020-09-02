@@ -124,6 +124,7 @@
                         <div class="header-cart header-dropdown">
                             <?php if (@$_SESSION['cart'] == null) :?>
                                 <h2 style="color: black">Go Buy Items</h2>
+
                                 <div class="header-cart-wrapbtn" style="margin-top: 15px">
                                     <!-- Button -->
                                     <a href="index.php?action=displayArticles" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
@@ -133,56 +134,26 @@
 
                             <?php else :?>
                             <ul class="header-cart-wrapitem">
+                                <?php foreach ($_SESSION['cart']->GetEveryItems() as $item) : ?>
                                 <li class="header-cart-item">
                                     <div class="header-cart-item-img">
-                                        <img src="view/content_2/images/item-cart-01.jpg" alt="IMG">
+                                        <img src="<?= $item['img'] ?>" alt="IMG">
                                     </div>
                                     <div class="header-cart-item-txt">
                                         <a href="#" class="header-cart-item-name">
-                                            <?php $_SESSION['cart']?>
+                                            <?= $item['code'] ?>
                                         </a>
 
                                         <span class="header-cart-item-info">
-											1 x $19.00
+											<?= $item['quantity'] ?> x $ <?= $item['price']?>
 										</span>
                                     </div>
                                 </li>
-
-                                <li class="header-cart-item">
-                                    <div class="header-cart-item-img">
-                                        <img src="view/content_2/images/item-cart-02.jpg" alt="IMG">
-                                    </div>
-
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-                                            Converse All Star Hi Black Canvas
-                                        </a>
-
-                                        <span class="header-cart-item-info">
-											1 x $39.00
-										</span>
-                                    </div>
-                                </li>
-
-                                <li class="header-cart-item">
-                                    <div class="header-cart-item-img">
-                                        <img src="view/content_2/images/item-cart-03.jpg" alt="IMG">
-                                    </div>
-
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-                                            Nixon Porter Leather Watch In Tan
-                                        </a>
-
-                                        <span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-                                    </div>
-                                </li>
+                                <?php endforeach; ?>
                             </ul>
 
                             <div class="header-cart-total">
-                                Total: $75.00
+                                Total: $<?= $_SESSION['cart']->GetTotalPrice() ?>
                             </div>
 
                             <div class="header-cart-buttons">

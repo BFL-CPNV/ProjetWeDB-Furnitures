@@ -21,7 +21,8 @@ class Cart
         return $this->items;
     }
 
-    public function GetTotalPrice(){
+    public function GetTotalPrice()
+    {
         return $this->totalPrice;
     }
 
@@ -39,16 +40,19 @@ class Cart
             $this->AddItemToArray($item, $quantityToAdd);
         }
 
-        $this->numberOfItems+= $quantityToAdd;
+        $this->numberOfItems += $quantityToAdd;
         $this->ComputeTotalPrice();
 
     }
 
     private function AddItemToArray($item, $quantityToAdd)
     {
-        $test = 3;
+        /* Puts default img if necessary */
+        if ($item[0]['photo']) $img = $item[0]['photo'];
+        else $img = 'view/content/img/feature/default.jpg';
+
         $array = [
-            "img" => $item[0]['photo'],
+            "img" => $img,
             "code" => $item[0]['code'],
             "price" => (int)$item[0]['price'],
             "quantity" => (int)$quantityToAdd,
@@ -67,17 +71,18 @@ class Cart
 
     private function AddQuantityToArray($code, $quantityToAdd)
     {
-        for ($index = 0; $index < count($this->items); $index++){
-            if ($this->items[$index]['code'] == $code){
+        for ($index = 0; $index < count($this->items); $index++) {
+            if ($this->items[$index]['code'] == $code) {
                 $this->items[$index]['quantity'] += $quantityToAdd;
                 $this->items[$index]['totalPrice'] = $this->items[$index]['quantity'] * $this->items[$index]['price'];
             }
         }
     }
 
-    private function ComputeTotalPrice(){
+    private function ComputeTotalPrice()
+    {
         $this->totalPrice = 0;
-        foreach ($this->items as $item){
+        foreach ($this->items as $item) {
             $this->totalPrice += $item['totalPrice'];
         }
     }
