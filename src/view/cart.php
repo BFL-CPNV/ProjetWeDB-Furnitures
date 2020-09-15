@@ -63,21 +63,21 @@ $title = "Rent A Snow - Home";
                                     </div>
                                 </td>
                                 <td>
-                                    <h5><?= $article['price'] ?></h5>
+                                    <h5 class="cart-base_price"><?= $article['price'] ?></h5>
                                 </td>
                                 <td>
                                     <div class="flex-w bo5 of-hidden w-size17">
-                                        <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2 button_cart" id="cmd<?= $article['code'] ?>1">
+                                        <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2 negative-button_cart" id="cmd<?= $article['code'] ?>1">
                                             <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
                                         </button>
                                         <input class="size8 m-text18 t-center num-product input-text_cart" type="text" id="quantity_<?= $article['code'] ?>" disabled
                                                value=<?= $article['quantity'] ?>>
-                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2" id="cmd<?= $article['code'] ?>2">
+                                        <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 positive-button_cart" id="cmd<?= $article['code'] ?>2">
                                             <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
                                     </div>
                                 </td>
                                 <td>
-                                    <h5><?= $article['totalPrice'] ?></h5>
+                                    <h5 class="cart-total_price"><?= $article['totalPrice'] ?></h5>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -108,7 +108,7 @@ $title = "Rent A Snow - Home";
                     <?php endif; ?>
                 </table>
                 <div class="checkout_btn_inner float-right">
-                    <a class="btn_1" href=>Continue Shopping</a>
+                    <a class="btn_1" href="index.php?action=displayArticles">Continue Shopping</a>
                     <a class="btn_1 checkout_btn_1" href="index.php?action=checkout">Proceed to checkout</a>
                 </div>
             </div>

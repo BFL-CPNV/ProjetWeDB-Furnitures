@@ -325,18 +325,10 @@
 <script src="view/content/js/theme.js"></script>
 
 
-
-
-
-
-
-
-
-
 <!--===============================================================================================-->
 <script type="text/javascript" src="view/content_2/vendor/jquery/jquery-3.2.1.min.js"></script>
 <!--===============================================================================================-->
-<script type="text/javascript" src="view/content_2/vendor/animsition/js/animsition.min.js"></script> s
+<script type="text/javascript" src="view/content_2/vendor/animsition/js/animsition.min.js"></script>
 <!--===============================================================================================-->
 <script type="text/javascript" src="view/content_2/vendor/bootstrap/js/popper.js"></script>
 <script type="text/javascript" src="view/content_2/vendor/bootstrap/js/bootstrap.min.js"></script>
