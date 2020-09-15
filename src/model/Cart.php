@@ -60,7 +60,6 @@ class Cart
         $this->ComputeNumberOfItems();
         $this->ComputeTotalPrice();
 
-        $test = $this->items;
     }
 
     private function AddItemToArray($item, $quantityToAdd)

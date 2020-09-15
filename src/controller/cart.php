@@ -40,6 +40,8 @@ function deleteItemCart(){
     $itemCode = @$_GET['code'];
     $quantity = @$_GET['quantity'];
     deleteItemInCart($_SESSION['cart'], $itemCode, $quantity);
+
+    displayCart(@$_SESSION['cart']);
 }
 
 function checkout(){

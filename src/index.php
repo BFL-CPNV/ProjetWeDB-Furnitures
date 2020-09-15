@@ -32,6 +32,7 @@ if (isset($_GET['action'])) {
             break;
         case 'deleteItem' :
             deleteItemCart();
+            break;
         case 'home' :
             home();
             break;

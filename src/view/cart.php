@@ -77,7 +77,7 @@ $title = "Rent A Snow - Home";
                                     </div>
                                 </td>
                                 <td>
-                                    <h5 class="cart-total_price"><?= $article['totalPrice'] ?></h5>
+                                    <h5 class="cart-total_item_price"><?= $article['totalPrice'] ?></h5>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -100,7 +100,7 @@ $title = "Rent A Snow - Home";
                                 <h5>Subtotal</h5>
                             </td>
                             <td>
-                                <h5><?= $totalPrice ?></h5>
+                                <h5 id="cart-total_price"><?= $totalPrice ?></h5>
                             </td>
                         </tr>
                         </tbody>
