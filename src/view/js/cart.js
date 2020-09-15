@@ -11,7 +11,7 @@ let newTotalPrice = 0;
 for (let index = 0; index < negativeButton.length; index++){
     negativeButton[index].addEventListener('click', () => {
         negativeRealInputValue = parseInt(inputText[index].value) - 1;
-        newTotalPrice = positiveRealInputValue * parseInt(basePrice[index].textContent);
+        newTotalPrice = negativeRealInputValue * parseInt(basePrice[index].textContent);
         totalPrice[index].textContent = newTotalPrice;
     });
 }
