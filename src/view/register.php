@@ -33,19 +33,19 @@ ob_start();
                             <h3>S'inscrire</h3>
 
                             <?php if (isset($_GET['register-error'])) {
-                                if ($_GET['register-error'] = true) {
+                                if ($_GET['register-error'] == true) {
                                     echo "<div><h6 style='color:red'><strong>Une erreur est survenue...</strong></h6></div><br>";
                                 }
                             }
 
                             if (isset($_GET['register-pwd-error'])) {
-                                if ($_GET['register-pwd-error'] = true) {
+                                if ($_GET['register-pwd-error'] == true) {
                                     echo "<div><h6 style='color:red'><strong>Les mots de passe ne correspondent pas</strong></h6></div><br>";
                                 }
                             }
 
                             if (isset($_GET['database-error'])) {
-                                if ($_GET['database-error'] = true) {
+                                if ($_GET['database-error'] == true) {
                                     echo "<div><h6 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h6></div><br>";
                                 }
                             }

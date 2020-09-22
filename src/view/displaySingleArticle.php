@@ -48,7 +48,7 @@ ob_start();
                             <?php endfor;
                         } else {
                             if (isset($_GET['database-error'])) {
-                                if ($_GET['database-error'] = true) {
+                                if ($_GET['database-error'] == true) {
                                     echo "<div><h7 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h7></div><br>";
                                 }
                             }

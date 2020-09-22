@@ -34,7 +34,7 @@ function login($loginRequest)
             //try to check if user/psw are matching with the database
             require_once "model/usersManager.php";
             if (isLoginCorrect($userEmailAddress, $userPsw)) {
-                $loginErrorMessage = null;
+                $_GET['login-error'] = false;
                 createSession($userEmailAddress);
                 require "view/home.php";
             } else { //if the user/psw does not match, login form appears again with an error message

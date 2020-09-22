@@ -28,13 +28,13 @@ ob_start();
                         <div class="login_part_form_iner">
                             <h3>Login</h3>
                             <?php if (isset($_GET['login-error'])) {
-                                if ($_GET['login-error'] = true) {
+                                if ($_GET['login-error'] == true) {
                                     echo "<div><h6 style='color:red'><strong>L'email ou le mot de passe est incorrect.</strong></h6></div><br>";
                                 }
                             }
 
                             if (isset($_GET['database-error'])) {
-                                if ($_GET['database-error'] = true) {
+                                if ($_GET['database-error'] == true) {
                                     echo "<div><h6 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h6></div><br>";
                                 }
                             }
