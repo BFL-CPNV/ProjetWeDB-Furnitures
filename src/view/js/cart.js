@@ -64,6 +64,5 @@ for(let index = 0; index < inputText.length; index++){
     itemsArray.push(new cartItem(price, quantity, total));
 }
 
-
 buttonsEventListener(positiveButton);
 buttonsEventListener(negativeButton);

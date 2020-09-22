@@ -12,6 +12,8 @@
 
 ob_start();
 $title = "Rent A Snow - Home";
+$articlesCodeString = "";
+$articleQuantity = null;
 ?>
 
 
@@ -41,6 +43,8 @@ $title = "Rent A Snow - Home";
                         <h2 style="text-align: center">Your cart is currently empty</h2>
                     <?php else: ?>
                         <?php foreach ($articles as $article) : ?>
+                            <?php $articlesCodeString .= $article['code'] . ","  ?>
+                            <?php $articleQuantity .= $article['quantity']?>
                             <thead>
                             <tr>
                                 <th scope="col">Article</th>
@@ -83,7 +87,7 @@ $title = "Rent A Snow - Home";
                         <?php endforeach; ?>
                         <tr class="bottom_button">
                             <td>
-                                <a class="btn_1" href="#">Refresh Cart</a>
+                                <a class="btn_1" href="index.php?action=updateCart&codes=<?= $articlesCodeString?>&quantites=<?=$articleQuantity ?>">Refresh Cart</a>
                             </td>
                             <td></td>
                             <td></td>
