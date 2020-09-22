@@ -42,6 +42,7 @@ $articleQuantity = null;
                     <?php if (!isset($_SESSION['cart']) || $articles == false || count($articles) == 0) : ?>
                         <h2 style="text-align: center">Your cart is currently empty</h2>
                     <?php else: ?>
+                    <form method="post" action="index.php?action=updateCart" >
                         <?php foreach ($articles as $article) : ?>
                             <?php $articlesCodeString .= $article['code'] . ","  ?>
                             <?php $articleQuantity .= $article['quantity']?>
@@ -74,7 +75,7 @@ $articleQuantity = null;
                                         <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2 negative-button_cart" id="cmd<?= $article['code'] ?>1">
                                             <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
                                         </button>
-                                        <input class="size8 m-text18 t-center num-product input-text_cart" type="text" id="quantity_<?= $article['code'] ?>" disabled
+                                        <input class="size8 m-text18 t-center num-product input-text_cart" name="cart-quantity-input-<?= $article['code'] ?>" type="text" id="quantity_<?= $article['code'] ?>" disabled
                                                value=<?= $article['quantity'] ?>>
                                         <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 positive-button_cart" id="cmd<?= $article['code'] ?>2">
                                             <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
@@ -85,9 +86,10 @@ $articleQuantity = null;
                                 </td>
                             </tr>
                         <?php endforeach; ?>
+
                         <tr class="bottom_button">
                             <td>
-                                <a class="btn_1" href="index.php?action=updateCart&codes=<?= $articlesCodeString?>&quantites=<?=$articleQuantity ?>">Refresh Cart</a>
+                                <button type="submit" class="btn_1">Refresh Cart</button>
                             </td>
                             <td></td>
                             <td></td>
@@ -97,6 +99,7 @@ $articleQuantity = null;
                                 </div>
                             </td>
                         </tr>
+                    </form>
                         <tr>
                             <td></td>
                             <td></td>
