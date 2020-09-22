@@ -11,10 +11,6 @@ $title = 'Rent A Snow - Login/Logout';
 
 ob_start();
 ?>
-<?php if(isset($loginErrorMessage)) : ?>
-    <h5><span style="color:red"><?= $loginErrorMessage; ?></span></h5>
-<?php endif ?>
-
     <section class="login_part padding_top">
         <div class="container">
             <div class="row align-items-center">
@@ -31,13 +27,29 @@ ob_start();
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
                             <h3>Login</h3>
-                            <form class="row contact_form" action="index.php?action=login" method="POST" novalidate="novalidate">
+                            <?php if (isset($_GET['login-error'])) {
+                                if ($_GET['login-error'] = true) {
+                                    echo "<div><h6 style='color:red'><strong>L'email ou le mot de passe est incorrect.</strong></h6></div><br>";
+                                }
+                            }
+
+                            if (isset($_GET['database-error'])) {
+                                if ($_GET['database-error'] = true) {
+                                    echo "<div><h6 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h6></div><br>";
+                                }
+                            }
+                            ?>
+
+
+                            <form class="row contact_form" action="index.php?action=login" method="POST">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="email" class="form-control" id="name" name="inputUserEmailAddress" value=""
+                                    <input type="email" class="form-control" id="name" name="inputUserEmailAddress"
+                                           value=""
                                            placeholder="E-mail address" required>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="password" name="inputUserPsw" value=""
+                                    <input type="password" class="form-control" id="password" name="inputUserPsw"
+                                           value=""
                                            placeholder="Password" required>
                                 </div>
                                 <div class="col-md-12 form-group">
@@ -58,25 +70,6 @@ ob_start();
         </div>
     </section>
 
-   <!-- <article>
-        <form class='form' method='POST' action="index.php?action=login">
-            <div class="container">
-                <label for="userEmail"><b>Adresse email</b></label>
-                <input type="email" placeholder="Adresse email" name="inputUserEmailAddress" required>
-
-                <label for="userPsw"><b>Mot de passe</b></label>
-                <input type="password" placeholder="Mot de passe" name="inputUserPsw" required>
-            </div>
-            <div class="container">
-                <button type="submit" class="btn btn-default">Login</button>
-                <button type="reset" class="btn btn-default">Effacer</button>
-                <span class="psw"><a href="index.php?action=forgotPassword">Mot de passe oublié ?</a></span>
-            </div>
-        </form>
-        <div class="container signin">
-            <p>Besoin d'un compte <a href="index.php?action=register">S'inscrire</a>.</p>
-        </div>
-    </article>  -->
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';

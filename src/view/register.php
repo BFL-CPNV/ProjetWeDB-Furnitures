@@ -11,7 +11,7 @@ $title = 'Rent A Snow - Inscription';
 
 ob_start();
 ?>
-<?php if(isset($registerErrorMessage)) : ?>
+<?php if (isset($registerErrorMessage)) : ?>
     <h5><span style="color:red"><?= $registerErrorMessage; ?></span></h5>
 <?php endif ?>
 
@@ -31,25 +31,51 @@ ob_start();
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
                             <h3>S'inscrire</h3>
-                            <form class="row contact_form" action="index.php?action=register" method="POST" novalidate="novalidate">
+
+                            <?php if (isset($_GET['register-error'])) {
+                                if ($_GET['register-error'] = true) {
+                                    echo "<div><h6 style='color:red'><strong>Une erreur est survenue...</strong></h6></div><br>";
+                                }
+                            }
+
+                            if (isset($_GET['register-pwd-error'])) {
+                                if ($_GET['register-pwd-error'] = true) {
+                                    echo "<div><h6 style='color:red'><strong>Les mots de passe ne correspondent pas</strong></h6></div><br>";
+                                }
+                            }
+
+                            if (isset($_GET['database-error'])) {
+                                if ($_GET['database-error'] = true) {
+                                    echo "<div><h6 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h6></div><br>";
+                                }
+                            }
+                            ?>
+
+                            <form class="row contact_form" action="index.php?action=register" method="POST"
+                                  novalidate="novalidate">
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="email" class="form-control" id="name" name="inputUserEmailAddress" value=""
+                                    <input type="email" class="form-control" id="name" name="inputUserEmailAddress"
+                                           value=""
                                            placeholder="Email address" required>
                                 </div>
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="password" name="inputUserPsw" value=""
+                                    <input type="password" class="form-control" id="password" name="inputUserPsw"
+                                           value=""
                                            placeholder="Mot de passe" required>
                                 </div>
 
                                 <div class="col-md-12 form-group p_star">
-                                    <input type="password" class="form-control" id="password" name="inputUserPswRepeat" value=""
+                                    <input type="password" class="form-control" id="password" name="inputUserPswRepeat"
+                                           value=""
                                            placeholder="Confirmation mot de passe" required>
                                 </div>
 
 
                                 <div class="col-md-12 form-group">
-                                    <p>En soumettant votre demande de compte, vous validez les conditions générales d'utilisation.<a
-                                                href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/"> CGU et vie
+                                    <p>En soumettant votre demande de compte, vous validez les conditions générales
+                                        d'utilisation.<a
+                                                href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">
+                                            CGU et vie
                                             privée</a>.</p>
                                     <button type="submit" value="submit" class="btn_3">
                                         Créer un compte

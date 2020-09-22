@@ -35,15 +35,24 @@ ob_start();
             <div class="col-lg-7 col-xl-7">
                 <div class="product_slider_img">
                     <div id="vertical">
-                        <?php for ($i = 0; $i <= 3; $i++) : ?>
-                            <?php
-                            $url = $singleArticle[0]['photo'];
-                            $url = substr_replace($url, $i + 1, -5, 1)
-                            ?>
-                            <div data-thumb="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>">
-                                <img src="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>"/>
-                            </div>
-                        <?php endfor; ?>
+                        <?php
+                        if (isset($singleArticle)) {
+                            for ($i = 0; $i <= 3; $i++) : ?>
+                                <?php
+                                $url = $singleArticle[0]['photo'];
+                                $url = substr_replace($url, $i + 1, -5, 1)
+                                ?>
+                                <div data-thumb="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>">
+                                    <img src="<?php if (strlen($url) < 5) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $url ?> <?php endif; ?>"/>
+                                </div>
+                            <?php endfor;
+                        } else {
+                            if (isset($_GET['database-error'])) {
+                                if ($_GET['database-error'] = true) {
+                                    echo "<div><h7 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h7></div><br>";
+                                }
+                            }
+                        } ?>
                     </div>
                 </div>
             </div>

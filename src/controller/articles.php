@@ -18,7 +18,9 @@ function displayArticles()
     try {
         $snowsResults = getArticles();
     } catch (ModelDataBaseException $ex) {
-        $articleErrorMessage = "Nous rencontrons temporairement un problème technique pour afficher nos produits. Désolé du dérangement !";
+        if ($_GET['database-error'] = false) {
+            $_GET['database-error'] = true;
+        }
     } finally {
         require "view/articles.php";
     }
@@ -33,7 +35,9 @@ function displaySingleArticle()
         $code = $_GET['code'];
         $singleArticle = getSingleArticleByCode($code);
     } catch (ModelDataBaseException $ex) {
-        $articleErrorMessage = "Nous rencontrons temporairement un problème technique pour afficher nos produits. Désolé du dérangement !";
+        if ($_GET['database-error'] = false) {
+            $_GET['database-error'] = true;
+        }
     } finally {
         require "view/displaySingleArticle.php";
     }

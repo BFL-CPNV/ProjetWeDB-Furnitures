@@ -6,7 +6,7 @@
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY
  * @version   13-APR-2020
-*/
+ */
 
 
 /**
@@ -38,15 +38,19 @@ function login($loginRequest)
                 createSession($userEmailAddress);
                 require "view/home.php";
             } else { //if the user/psw does not match, login form appears again with an error message
-                $loginErrorMessage = "L'adresse email et/ou le mot de passe ne correspondent pas !";
+                $_GET['login-error'] = true;
                 require "view/login.php";
             }
         } else { //the user does not yet fill the form
             require "view/login.php";
         }
     } catch (ModelDataBaseException $ex) {
-        $loginErrorMessage = "Nous rencontrons actuellement un problème technique. Il est temporairement impossible de s'annoncer. Désolé du dérangement !";
-        require "view/login.php";
+        if ($_GET['database-error'] = false) {
+            $_GET['database-error'] = true;
+            require "view/login.php";
+        } else {
+            require "view/login.php";
+        }
     }
 }
 
@@ -80,22 +84,28 @@ function register($registerRequest)
                 require_once "model/usersManager.php";
                 if (registerNewAccount($userEmailAddress, $userPsw)) {
                     createSession($userEmailAddress);
-                    $registerErrorMessage = null;
+                    $_GET['register-pwd-error'] = false;
+                    $_GET['register-error'] = false;
                     require "view/home.php";
                 } else {
-                    $registerErrorMessage = "L'inscription n'est pas possible avec les valeurs saisies !";
+                    $_GET['register-error'] = true;
                     require "view/register.php";
                 }
             } else {
-                $registerErrorMessage = "Les mots de passe ne sont pas similaires !";
+                $_GET['register-pwd-error'] = true;
                 require "view/register.php";
             }
         } else {
-            $registerErrorMessage = null;
+            $_GET['register-error'] = false;
+            $_GET['register-pwd-error'] = false;
             require "view/register.php";
         }
     } catch (ModelDataBaseException $ex) {
-        $registerErrorMessage = "Nous rencontrons actuellement un problème technique. Il est temporairement impossible de s'enregistrer. Désolé du dérangement !";
-        require "view/register.php";
+        if ($_GET['database-error'] = false) {
+            $_GET['database-error'] = true;
+            require "view/register.php";
+        } else {
+            require "view/register.php";
+        }
     }
 }

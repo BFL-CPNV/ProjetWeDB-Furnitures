@@ -16,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>aranoz</title>
 
-
+    <link rel="stylesheet" href="view/css/classes.css" type="text/css">
     <link rel="icon" href="view/content/img/favicon.png" type="text/css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="view/content/css/bootstrap.min.css" type="text/css">

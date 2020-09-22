@@ -187,27 +187,40 @@ $rows = 0; // Column count
                     </div>
 
                     <div class="row align-items-center latest_product_inner">
-                        <?php foreach ($snowsResults as $item) : ?>
-                            <div class="col-lg-4 col-sm-6">
-                                <a href="index.php?action=displaySingleArticle&code=<?= $item['code'] ?>"
-                                   style="cursor: pointer">
-                                    <div class="single_product_item">
-                                        <img src="
+                        <?php
+                        if (isset($snowsResults)) {
+                            foreach ($snowsResults as $item) :
+                                ?>
+                                <div class="col-lg-4 col-sm-6">
+                                    <a href="index.php?action=displaySingleArticle&code=<?= $item['code'] ?>"
+                                       style="cursor: pointer">
+                                        <div class="single_product_item">
+                                            <img src="
                                 <?php if (empty($item['photo'])) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $item['photo'] ?> <?php endif; ?>"
-                                             alt="">
-                                        <form action="index.php?action=addItemCart" method="post" id="all-articles-form-<?=$item['code']?>">
-                                            <input type="hidden" value="<?= $item['code'] ?>" name="input-code">
-                                            <input type="hidden" value="1" name="input-quantityToAdd">
-                                        <div class="single_product_text">
-                                            <h4><?= $item['brand'] ?></h4>
-                                            <h3>CHF <?= $item['price'] ?></h3>
-                                            <a onclick="document.getElementById('all-articles-form-<?=$item['code']?>').submit();" class="add_cart" style="cursor: pointer">+ add to cart<i class="ti-heart"></i></a>
+                                                 alt="">
+                                            <form action="index.php?action=addItemCart" method="post"
+                                                  id="all-articles-form-<?= $item['code'] ?>">
+                                                <input type="hidden" value="<?= $item['code'] ?>" name="input-code">
+                                                <input type="hidden" value="1" name="input-quantityToAdd">
+                                                <div class="single_product_text">
+                                                    <h4><?= $item['brand'] ?></h4>
+                                                    <h3>CHF <?= $item['price'] ?></h3>
+                                                    <a onclick="document.getElementById('all-articles-form-<?= $item['code'] ?>').submit();"
+                                                       class="add_cart" style="cursor: pointer">+ add to cart<i
+                                                                class="ti-heart"></i></a>
+                                                </div>
+                                            </form>
                                         </div>
-                                        </form>
-                                    </div>
-                                </a>
-                            </div>
-                        <?php endforeach; ?>
+                                    </a>
+                                </div>
+                            <?php endforeach;
+                        } else {
+                            if (isset($_GET['database-error'])) {
+                                if ($_GET['database-error'] = true) {
+                                    echo "<div><h7 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h7></div><br>";
+                                }
+                            }
+                        } ?>
 
                         <div class="col-lg-12">
                             <div class="pageination">
