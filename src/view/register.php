@@ -11,10 +11,6 @@ $title = 'Rent A Snow - Inscription';
 
 ob_start();
 ?>
-<?php if (isset($registerErrorMessage)) : ?>
-    <h5><span style="color:red"><?= $registerErrorMessage; ?></span></h5>
-<?php endif ?>
-
     <section class="login_part padding_top">
         <div class="container">
             <div class="row align-items-center">
@@ -51,8 +47,7 @@ ob_start();
                             }
                             ?>
 
-                            <form class="row contact_form" action="index.php?action=register" method="POST"
-                                  novalidate="novalidate">
+                            <form class="row contact_form" action="index.php?action=register" method="POST">
                                 <div class="col-md-12 form-group p_star">
                                     <input type="email" class="form-control" id="name" name="inputUserEmailAddress"
                                            value=""
