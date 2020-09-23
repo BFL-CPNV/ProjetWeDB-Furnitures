@@ -75,7 +75,6 @@ ob_start();
                                     <button type="submit" value="submit" class="btn_3">
                                         Créer un compte
                                     </button>
-                                    <a class="lost_pass" href="#">forget password?</a>
                                 </div>
                             </form>
                         </div>

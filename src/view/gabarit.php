@@ -88,20 +88,28 @@
                     <div class="collapse navbar-collapse main-menu-item" id="navbarSupportedContent">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action=home" <?php if ((@$_GET['action'] == 'home')): ?> style="color:#FC05CB"  <?php endif; ?>>Accueil</a>
+                                <a class="nav-link"
+                                   href="index.php?action=home" <?php if ((@$_GET['action'] == 'home')): ?> style="color:#FC05CB"  <?php endif; ?>>Accueil</a>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="index.php?action=displayArticles" <?php if (@$_GET['action'] == "displayArticles"): ?> style="color:#FC05CB"  <?php endif; ?>>Produits</a>
+                                <a class="nav-link"
+                                   href="index.php?action=displayArticles" <?php if (@$_GET['action'] == "displayArticles"): ?> style="color:#FC05CB"  <?php endif; ?>>Produits</a>
                             </li>
-                            <!--<?php echo 'userEmailAddress : ' . !isset($_SESSION['userEmailAddress']) . ' action : ' . !isset($_GET['action'])?> -->
+                            <!--<?php echo 'userEmailAddress : ' . !isset($_SESSION['userEmailAddress']) . ' action : ' . !isset($_GET['action']) ?> -->
                             <?php if (!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action'] == "logout"))) : ?>
-                                <li class="nav-item"><a class="nav-link" href="index.php?action=login" <?php if (@$_GET['action'] == "login"): ?> style="color:#FC05CB"  <?php endif; ?>>Login</a></li>
-                                <li class="nav-item"><a class="nav-link" href="index.php?action=register" <?php if (@$_GET['action'] == "register"): ?> style="color:#FC05CB"  <?php endif; ?>> S'inscrire</a>
+                                <li class="nav-item"><a class="nav-link"
+                                                        href="index.php?action=login" <?php if (@$_GET['action'] == "login"): ?> style="color:#FC05CB"  <?php endif; ?>>Login</a>
+                                </li>
+                                <li class="nav-item"><a class="nav-link"
+                                                        href="index.php?action=register" <?php if (@$_GET['action'] == "register"): ?> style="color:#FC05CB"  <?php endif; ?>>
+                                        S'inscrire</a>
                                 </li>
                             <?php else : ?>
                                 <!-- Display the button useful for logout-->
-                                <li class="nav-item"><a class="nav-link" href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Se déconnecter</a></li>
+                                <li class="nav-item"><a class="nav-link"
+                                                        href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Se
+                                        déconnecter</a></li>
                             <?php endif; ?>
                             <!-- after login, we display the user name-->
                             <?php if (isset($_SESSION['userEmailAddress'])) : ?>
@@ -112,46 +120,48 @@
                         </ul>
                     </div>
                     <div class="header-wrapicon2">
-                        <img src="view/content_2/images/icons/icon-header-02.png" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                        <img src="view/content_2/images/icons/icon-header-02.png"
+                             class="header-icon1 js-show-header-dropdown" alt="ICON">
                         <span class="header-icons-noti">
-                            <?php if (@$_SESSION['cart'] == null) :?>
-                            0
-                            <?php else :?>
-                            <?=$_SESSION['cart']->numberOfItems?></span>
-                        <?php endif?>
+                            <?php if (@$_SESSION['cart'] == null) : ?>
+                                0
+                            <?php else : ?>
+                            <?= $_SESSION['cart']->numberOfItems ?></span>
+                        <?php endif ?>
 
                         <!-- Header cart noti -->
                         <div class="header-cart header-dropdown">
-                            <?php if (@$_SESSION['cart'] == null) :?>
+                            <?php if (@$_SESSION['cart'] == null) : ?>
                                 <h2 style="color: black">Go Buy Items</h2>
 
                                 <div class="header-cart-wrapbtn" style="margin-top: 15px">
                                     <!-- Button -->
-                                    <a href="index.php?action=displayArticles" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    <a href="index.php?action=displayArticles"
+                                       class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                         Produits
                                     </a>
                                 </div>
 
-                            <?php else :?>
+                            <?php else : ?>
                             <ul class="header-cart-wrapitem">
                                 <?php foreach ($_SESSION['cart']->GetEveryItems() as $item) : ?>
-                                <li class="header-cart-item">
-                                    <a href="index.php?action=deleteItem&code=<?= $item['code']?>">
-                                    <div class="header-cart-item-img">
-                                        <img src="<?= $item['img'] ?>" alt="IMG">
-                                    </div>
-                                    </a>
-                                    <div class="header-cart-item-txt">
-                                        <a href="#" class="header-cart-item-name">
-                                            <?= $item['code'] ?>
+                                    <li class="header-cart-item">
+                                        <a href="index.php?action=deleteItem&code=<?= $item['code'] ?>">
+                                            <div class="header-cart-item-img">
+                                                <img src="<?= $item['img'] ?>" alt="IMG">
+                                            </div>
                                         </a>
+                                        <div class="header-cart-item-txt">
+                                            <a href="#" class="header-cart-item-name">
+                                                <?= $item['code'] ?>
+                                            </a>
 
-                                        <span class="header-cart-item-info">
-											<?= $item['quantity'] ?> x $ <?= $item['price']?>
-                                            <span style="margin-left: 25px;font-weight: 900; font-size: 15px">$<?= $item['quantity'] * $item['price']?> </span>
+                                            <span class="header-cart-item-info">
+											<?= $item['quantity'] ?> x $ <?= $item['price'] ?>
+                                            <span style="margin-left: 25px;font-weight: 900; font-size: 15px">$<?= $item['quantity'] * $item['price'] ?> </span>
 										</span>
-                                    </div>
-                                </li>
+                                        </div>
+                                    </li>
                                 <?php endforeach; ?>
                             </ul>
 
@@ -162,20 +172,22 @@
                             <div class="header-cart-buttons">
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
-                                    <a href="index.php?action=displayCart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    <a href="index.php?action=displayCart"
+                                       class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                         View Cart
                                     </a>
                                 </div>
 
                                 <div class="header-cart-wrapbtn">
                                     <!-- Button -->
-                                    <a href="index.php?action=checkout" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                    <a href="index.php?action=checkout"
+                                       class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
                                         Check Out
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <?php endif ?>
+                    <?php endif ?>
                     </div>
                 </nav>
             </div>
@@ -193,75 +205,6 @@
 
 
 <!--::footer_part start::-->
-<footer class="footer_part">
-    <div class="container">
-        <div class="row justify-content-around">
-            <div class="col-sm-6 col-lg-2">
-                <div class="single_footer_part">
-                    <h4>Top Products</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="">Managed Website</a></li>
-                        <li><a href="">Manage Reputation</a></li>
-                        <li><a href="">Power Tools</a></li>
-                        <li><a href="">Marketing Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <div class="single_footer_part">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="">Jobs</a></li>
-                        <li><a href="">Brand Assets</a></li>
-                        <li><a href="">Investor Relations</a></li>
-                        <li><a href="">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <div class="single_footer_part">
-                    <h4>Features</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="">Jobs</a></li>
-                        <li><a href="">Brand Assets</a></li>
-                        <li><a href="">Investor Relations</a></li>
-                        <li><a href="">Terms of Service</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-2">
-                <div class="single_footer_part">
-                    <h4>Resources</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="">Guides</a></li>
-                        <li><a href="">Research</a></li>
-                        <li><a href="">Experts</a></li>
-                        <li><a href="">Agencies</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4">
-                <div class="single_footer_part">
-                    <h4>Newsletter</h4>
-                    <p>Heaven fruitful doesn't over lesser in days. Appear creeping
-                    </p>
-                    <div id="mc_embed_signup">
-                        <form target="_blank"
-                              action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
-                              method="get" class="subscribe_form relative mail_part">
-                            <input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
-                                   class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
-                                   onblur="this.placeholder = ' Email Address '">
-                            <button type="submit" name="submit" id="newsletter-submit"
-                                    class="email_icon newsletter-submit button-contactForm">subscribe
-                            </button>
-                            <div class="mt-10 info"></div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
     <div class="copyright_part">
         <div class="container">
@@ -273,16 +216,6 @@
                             All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i>
                             by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="footer_icon social_icon">
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="single_social_icon"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="single_social_icon"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="single_social_icon"><i class="fas fa-globe"></i></a></li>
-                            <li><a href="#" class="single_social_icon"><i class="fab fa-behance"></i></a></li>
-                        </ul>
                     </div>
                 </div>
             </div>
