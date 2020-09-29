@@ -89,12 +89,12 @@
                         <ul class="navbar-nav">
                             <li class="nav-item">
                                 <a class="nav-link"
-                                   href="index.php?action=home" <?php if ((@$_GET['action'] == 'home')): ?> style="color:#FC05CB"  <?php endif; ?>>Accueil</a>
+                                   href="index.php?action=home" <?php if ((@$_GET['action'] == 'home')): ?> style="color:#FC05CB"  <?php endif; ?>>Home</a>
                             </li>
 
                             <li class="nav-item">
                                 <a class="nav-link"
-                                   href="index.php?action=displayArticles" <?php if (@$_GET['action'] == "displayArticles"): ?> style="color:#FC05CB"  <?php endif; ?>>Produits</a>
+                                   href="index.php?action=displayArticles" <?php if (@$_GET['action'] == "displayArticles"): ?> style="color:#FC05CB"  <?php endif; ?>>Products</a>
                             </li>
                             <!--<?php echo 'userEmailAddress : ' . !isset($_SESSION['userEmailAddress']) . ' action : ' . !isset($_GET['action']) ?> -->
                             <?php if (!isset($_SESSION['userEmailAddress']) || (!isset($_GET['action'])) || ((@$_GET['action'] == "logout"))) : ?>
@@ -103,18 +103,17 @@
                                 </li>
                                 <li class="nav-item"><a class="nav-link"
                                                         href="index.php?action=register" <?php if (@$_GET['action'] == "register"): ?> style="color:#FC05CB"  <?php endif; ?>>
-                                        S'inscrire</a>
+                                        Register</a>
                                 </li>
                             <?php else : ?>
                                 <!-- Display the button useful for logout-->
                                 <li class="nav-item"><a class="nav-link"
-                                                        href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Se
-                                        déconnecter</a></li>
+                                                        href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Logout</a></li>
                             <?php endif; ?>
                             <!-- after login, we display the user name-->
                             <?php if (isset($_SESSION['userEmailAddress'])) : ?>
                                 <li class="nav-item" style="padding-left: 200px">
-                                    <a class="nav-link">Vous êtes connecté : <?= $_SESSION['userEmailAddress']; ?></a>
+                                    <a class="nav-link">You are connected : <?= $_SESSION['userEmailAddress']; ?></a>
                                 </li>
                             <?php endif; ?>
                         </ul>
@@ -132,13 +131,13 @@
                         <!-- Header cart noti -->
                         <div class="header-cart header-dropdown">
                             <?php if (@$_SESSION['cart'] == null) : ?>
-                                <h2 style="color: black">Go Buy Items</h2>
+                                <h2 style="color: black">Start shopping !</h2>
 
                                 <div class="header-cart-wrapbtn" style="margin-top: 15px">
                                     <!-- Button -->
                                     <a href="index.php?action=displayArticles"
                                        class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
-                                        Produits
+                                        Products
                                     </a>
                                 </div>
 

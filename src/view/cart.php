@@ -11,7 +11,6 @@
  */
 
 ob_start();
-$title = "Rent A Snow - Home";
 ?>
 
 

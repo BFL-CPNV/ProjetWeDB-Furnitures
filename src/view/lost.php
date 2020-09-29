@@ -11,7 +11,7 @@ $title = 'Rent A Snow - Lost';
 
 ob_start();
 ?>
-    <h2>Oupsss... on vous a perdu en chemin ;(.</h2>
+    <h2>We lost you on the way ;(.</h2>
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';

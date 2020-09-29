@@ -17,32 +17,32 @@ ob_start();
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_text text-center">
                         <div class="login_part_text_iner">
-                            <h2>Vous avez déjà un compte ?</h2>
-                            <p>Cliquez sur le bouton ci-dessous</p>
-                            <a href="index.php?action=login" class="btn_3">Se connecter</a>
+                            <h2>Already got an account ?</h2>
+                            <p>Login here !</p>
+                            <a href="index.php?action=login" class="btn_3">Login</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_form">
                         <div class="login_part_form_iner">
-                            <h3>S'inscrire</h3>
+                            <h3>Register</h3>
 
                             <?php if (isset($_GET['register-error'])) {
                                 if ($_GET['register-error'] == true) {
-                                    echo "<div><h6 style='color:red'><strong>Une erreur est survenue...</strong></h6></div><br>";
+                                    echo "<div><h6 style='color:red'><strong>Something went wrong...</strong></h6></div><br>";
                                 }
                             }
 
                             if (isset($_GET['register-pwd-error'])) {
                                 if ($_GET['register-pwd-error'] == true) {
-                                    echo "<div><h6 style='color:red'><strong>Les mots de passe ne correspondent pas</strong></h6></div><br>";
+                                    echo "<div><h6 style='color:red'><strong>The passwords do not match</strong></h6></div><br>";
                                 }
                             }
 
                             if (isset($_GET['database-error'])) {
                                 if ($_GET['database-error'] == true) {
-                                    echo "<div><h6 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h6></div><br>";
+                                    echo "<div><h6 style='color:red'><strong>We encountered an unexpected error...(ERROR 503)</strong></h6></div><br>";
                                 }
                             }
                             ?>
@@ -56,24 +56,22 @@ ob_start();
                                 <div class="col-md-12 form-group p_star">
                                     <input type="password" class="form-control" id="password" name="inputUserPsw"
                                            value=""
-                                           placeholder="Mot de passe" required>
+                                           placeholder="Password" required>
                                 </div>
 
                                 <div class="col-md-12 form-group p_star">
                                     <input type="password" class="form-control" id="password" name="inputUserPswRepeat"
                                            value=""
-                                           placeholder="Confirmation mot de passe" required>
+                                           placeholder="Confirm password" required>
                                 </div>
 
 
                                 <div class="col-md-12 form-group">
-                                    <p>En soumettant votre demande de compte, vous validez les conditions générales
-                                        d'utilisation.<a
+                                    <p>By registering an account, you agree to the general conditions of use.<a
                                                 href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">
-                                            CGU et vie
-                                            privée</a>.</p>
+                                            CGU and private life</a>.</p>
                                     <button type="submit" value="submit" class="btn_3">
-                                        Créer un compte
+                                        Register
                                     </button>
                                 </div>
                             </form>
@@ -84,30 +82,6 @@ ob_start();
         </div>
     </section>
 
-    <!--<article>
-        <form class='form' method='POST' action="index.php?action=register">
-
-            <p>Pour vous inscrire chez Snows, nous vous prions de renseigner les champs suivants:</p>
-            <div class="container">
-                <label for="userEmail"><b>Adresse email</b></label>
-                <input type="email" placeholder="Email address" name="inputUserEmailAddress" required>
-
-                <label for="userPsw"><b>Mot de passe</b></label>
-                <input type="password" placeholder="Mot de passe" name="inputUserPsw" required>
-
-                <label for="psw-repeat"><b>Vérifier le mot de passe</b></label>
-                <input type="password" placeholder="Mot de passe" name="inputUserPswRepeat" required>
-
-                <p>En soumettant votre demande de compte, vous validez les conditions générales d'utilisation.<a
-                            href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">CGU et vie
-                        privée</a>.</p>
-                <button type="submit" class="registerbtn">S'inscrire</button>
-            </div>
-        </form>
-        <div class="container signin">
-            <p>Déjà membre ? <a href="index.php?action=login">Login</a>.</p>
-        </div>
-    </article> -->
 <?php
 $content = ob_get_clean();
 require 'gabarit.php';

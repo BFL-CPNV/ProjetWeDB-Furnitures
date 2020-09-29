@@ -17,9 +17,9 @@ ob_start();
                 <div class="col-lg-6 col-md-6">
                     <div class="login_part_text text-center">
                         <div class="login_part_text_iner">
-                            <h2>Besoin d'un compte ?</h2>
-                            <p>Cliquez sur le bouton ci-dessous</p>
-                            <a href="index.php?action=register" class="btn_3">S'inscrire</a>
+                            <h2>Don't have an account ?</h2>
+                            <p>Register one here !</p>
+                            <a href="index.php?action=register" class="btn_3">Register</a>
                         </div>
                     </div>
                 </div>
@@ -29,13 +29,13 @@ ob_start();
                             <h3>Login</h3>
                             <?php if (isset($_GET['login-error'])) {
                                 if ($_GET['login-error'] == true) {
-                                    echo "<div><h6 style='color:red'><strong>L'email ou le mot de passe est incorrect.</strong></h6></div><br>";
+                                    echo "<div><h6 style='color:red'><strong>The email or the password is incorrect, try again.</strong></h6></div><br>";
                                 }
                             }
 
                             if (isset($_GET['database-error'])) {
                                 if ($_GET['database-error'] == true) {
-                                    echo "<div><h6 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h6></div><br>";
+                                    echo "<div><h6 style='color:red'><strong>We encountered an unexpected error...(ERROR 503)</strong></h6></div><br>";
                                 }
                             }
                             ?>

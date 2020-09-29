@@ -49,7 +49,7 @@ ob_start();
                         } else {
                             if (isset($_GET['database-error'])) {
                                 if ($_GET['database-error'] == true) {
-                                    echo "<div><h7 style='color:red'><strong>Nous avons rencontré une erreur inattendue...(ERROR 503)</strong></h7></div><br>";
+                                    echo "<div><h7 style='color:red'><strong>Sorry, we encountered an unexpected error...(ERROR 503)</strong></h7></div><br>";
                                 }
                             }
                         } ?>
@@ -64,11 +64,12 @@ ob_start();
                     <ul class="list">
                         <li>
                             <a class="active" href="#">
-                                <span>Category</span> : Household</a>
+                                <span>Category :  </span> Household
+                            </a>
                         </li>
                         <li>
                             <a href="#">
-                                <span>Availibility</span> <?php if ($singleArticle[0]['active']) : ?> En stock <?php else: ?> Pas en stock <?php endif; ?>
+                                <span>Availibility :  </span> <?php if ($singleArticle[0]['active']) : ?> In stock <?php else: ?> Out of stock <?php endif; ?>
                             </a>
                         </li>
                     </ul>
@@ -211,14 +212,11 @@ ob_start();
                                     <div class="media-body">
                                         <h4>Blake Ruiz</h4>
                                         <h5>12th Feb, 2017 at 05:56 pm</h5>
-                                        <a class="reply_btn" href="#">Reply</a>
                                     </div>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                    Gotta say I was amazed with the quality, never thought I'd find
+                                    such quality for this item, very happy with the product.
                                 </p>
                             </div>
                             <div class="review_item reply">
@@ -227,16 +225,13 @@ ob_start();
                                         <img src="view/content/img/product/single-product/review-2.png" alt=""/>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Blake Ruiz</h4>
+                                        <h4>Jacob Truiz</h4>
                                         <h5>12th Feb, 2017 at 05:56 pm</h5>
-                                        <a class="reply_btn" href="#">Reply</a>
                                     </div>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                    Quite surprised, I was waiting for a lesser quality but what I got
+                                    is more than enough to make me change my mind, would buy again.
                                 </p>
                             </div>
                             <div class="review_item">
@@ -245,55 +240,15 @@ ob_start();
                                         <img src="view/content/img/product/single-product/review-3.png" alt=""/>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Blake Ruiz</h4>
+                                        <h4>Blare Raiz</h4>
                                         <h5>12th Feb, 2017 at 05:56 pm</h5>
-                                        <a class="reply_btn" href="#">Reply</a>
                                     </div>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                    Had a lot of fun putting together with my kids, the pieces were well kept and
+                                    no trace of any cuts or anything of the sort, I'm very happy with this order.
                                 </p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="review_box">
-                            <h4>Post a comment</h4>
-                            <form class="row contact_form" action="contact_process.php" method="post" id="contactForm"
-                                  novalidate="novalidate">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="name" name="name"
-                                               placeholder="Your Full name"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" id="email" name="email"
-                                               placeholder="Email Address"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="number" name="number"
-                                               placeholder="Phone Number"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                      <textarea class="form-control" name="message" id="message" rows="1"
-                                placeholder="Message"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 text-right">
-                                    <button type="submit" value="submit" class="btn_3">
-                                        Submit Now
-                                    </button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -373,10 +328,7 @@ ob_start();
                                     </div>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                    Top quality, nothing else to say.
                                 </p>
                             </div>
                             <div class="review_item">
@@ -385,7 +337,7 @@ ob_start();
                                         <img src="view/content/img/product/single-product/review-2.png" alt=""/>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Blake Ruiz</h4>
+                                        <h4>Drake Buiz</h4>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -394,10 +346,8 @@ ob_start();
                                     </div>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                    I like this kind of site, easy to move through and quality products at cheap prices
+                                    !
                                 </p>
                             </div>
                             <div class="review_item">
@@ -406,7 +356,7 @@ ob_start();
                                         <img src="view/content/img/product/single-product/review-3.png" alt=""/>
                                     </div>
                                     <div class="media-body">
-                                        <h4>Blake Ruiz</h4>
+                                        <h4>Lake Dumi</h4>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
                                         <i class="fa fa-star"></i>
@@ -415,78 +365,9 @@ ob_start();
                                     </div>
                                 </div>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna
-                                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                    ullamco laboris nisi ut aliquip ex ea commodo
+                                    The color is wonderful, my wife loves it !
                                 </p>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="review_box">
-                            <h4>Add a Review</h4>
-                            <p>Your Rating:</p>
-                            <ul class="list">
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-star"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-star"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-star"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-star"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fa fa-star"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <p>Outstanding</p>
-                            <form class="row contact_form" action="contact_process.php" method="post"
-                                  novalidate="novalidate">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="name"
-                                               placeholder="Your Full name"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="email" class="form-control" name="email"
-                                               placeholder="Email Address"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" name="number"
-                                               placeholder="Phone Number"/>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <textarea class="form-control" name="message" rows="1"
-                                                  placeholder="Review"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 text-right">
-                                    <button type="submit" value="submit" class="btn_3">
-                                        Submit Now
-                                    </button>
-                                </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -496,62 +377,7 @@ ob_start();
 </section>
 <!--================End Product Description Area =================-->
 
-<!-- product_list part start-->
-<section class="product_list best_seller">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="section_tittle text-center">
-                    <h2>Best Sellers <span>shop</span></h2>
-                </div>
-            </div>
-        </div>
-        <div class="row align-items-center justify-content-between">
-            <div class="col-lg-12">
-                <div class="best_product_slider owl-carousel">
-                    <div class="single_product_item">
-                        <img src="view/content/img/product/product_1.png" alt="">
-                        <div class="single_product_text">
-                            <h4>Quartz Belt Watch</h4>
-                            <h3>$150.00</h3>
-                        </div>
-                    </div>
-                    <div class="single_product_item">
-                        <img src="view/content/img/product/product_2.png" alt="">
-                        <div class="single_product_text">
-                            <h4>Quartz Belt Watch</h4>
-                            <h3>$150.00</h3>
-                        </div>
-                    </div>
-                    <div class="single_product_item">
-                        <img src="view/content/img/product/product_3.png" alt="">
-                        <div class="single_product_text">
-                            <h4>Quartz Belt Watch</h4>
-                            <h3>$150.00</h3>
-                        </div>
-                    </div>
-                    <div class="single_product_item">
-                        <img src="view/content/img/product/product_4.png" alt="">
-                        <div class="single_product_text">
-                            <h4>Quartz Belt Watch</h4>
-                            <h3>$150.00</h3>
-                        </div>
-                    </div>
-                    <div class="single_product_item">
-                        <img src="view/content/img/product/product_5.png" alt="">
-                        <div class="single_product_text">
-                            <h4>Quartz Belt Watch</h4>
-                            <h3>$150.00</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <?php
-
 $content = ob_get_clean();
 require 'gabarit.php';
 ?>

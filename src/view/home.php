@@ -23,9 +23,9 @@ $title = "Rent A Snow - Home";
                                         <div class="banner_text_iner">
                                             <h1>Wood & Cloth
                                                 Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                                            <p>Our company has been selling furniture online for more than 50 years, we specialize ourselves in
+                                            quality and assistance, you can look everywhere but it's here that'll you find what you want.</p>
+                                            <a href="index.php?action=displayArticles" class="btn_2">buy now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -40,9 +40,9 @@ $title = "Rent A Snow - Home";
                                         <div class="banner_text_iner">
                                             <h1>Cloth & Wood
                                                 Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                                            <p>With over 100+ employees, our company specializes in assistance and quality, quality is our top priority for you.
+                                            You won't find better furniture anywhere else !</p>
+                                            <a href="index.php?action=displayArticles" class="btn_2">buy now</a>
                                         </div>
                                     </div>
                                 </div>
@@ -57,9 +57,8 @@ $title = "Rent A Snow - Home";
                                         <div class="banner_text_iner">
                                             <h1>Wood & Cloth
                                                 Sofa</h1>
-                                            <p>Incididunt ut labore et dolore magna aliqua quis ipsum
-                                                suspendisse ultrices gravida. Risus commodo viverra</p>
-                                            <a href="#" class="btn_2">buy now</a>
+                                            <p>We're really proud of our new seasonal stock, you can check it out right now !</p>
+                                            <a href="index.php?action=displayArticles" class="btn_2">buy now</a>
                                         </div>
                                     </div>
                                 </div>
