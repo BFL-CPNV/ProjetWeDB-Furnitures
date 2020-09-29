@@ -94,7 +94,7 @@ $articleQuantity = null;
                                         <h5 class="cart-total_item_price" style="text-align: right"><?= $article['totalPrice'] ?></h5>
                                     </td>
                                     <td>
-                                        <a href="#" class="genric-btn danger" style="float: right">X</a>
+                                        <a href="index.php?action=deleteItem&code=<?= $article['code']?>" class="genric-btn danger" style="float: right">X</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
@@ -105,14 +105,19 @@ $articleQuantity = null;
                                 </td>
                                 <td></td>
                                 <td></td>
+                                <td></td>
                                 <td>
                                     <div class="cupon_text float-right">
                                         <a class="btn_1" href="#">Cancel Cart</a>
                                     </div>
                                 </td>
+                                <td>
+                                </td>
                             </tr>
 
                             <tr>
+                                <td></td>
+                                <td></td>
                                 <td></td>
                                 <td></td>
                                 <td>
