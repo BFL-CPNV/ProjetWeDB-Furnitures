@@ -44,7 +44,8 @@ $rows = 0; // Column count
                             </a>
                         </div>
                     <?php endforeach;
-                } else {
+                }
+                {
                     if (isset($_GET['database-error'])) {
                         if ($_GET['database-error'] == true) {
                             echo "<div><h7 style='color:red'><strong>Sorry, we encountered an unexpected error...(ERROR 503)</strong></h7></div><br>";
