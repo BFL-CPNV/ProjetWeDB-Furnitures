@@ -91,7 +91,7 @@ $articleQuantity = null;
                                         </div>
                                     </td>
                                     <td>
-                                        <h5 class="cart-total_item_price" style="text-align: right"><?= $article['totalPrice'] ?></h5>
+                                        <h5 class="cart-total_item_price" style="text-align: center"><?= $article['totalPrice'] ?></h5>
                                     </td>
                                     <td>
                                         <a href="index.php?action=deleteItem&code=<?= $article['code']?>" class="genric-btn danger" style="float: right">X</a>
