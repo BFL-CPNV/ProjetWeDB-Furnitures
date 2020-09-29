@@ -92,6 +92,7 @@ class Cart
 
         $array = [
             "img" => $img,
+            "description" => $item[0]['description'],
             "code" => $item[0]['code'],
             "price" => (int)$item[0]['price'],
             "quantity" => (int)$quantityToAdd,

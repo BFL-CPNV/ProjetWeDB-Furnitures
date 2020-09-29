@@ -50,6 +50,7 @@ $articleQuantity = null;
                                 <thead>
                                 <tr>
                                     <th scope="col">Article</th>
+                                    <th scope="col">Description</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Quantity</th>
                                     <th scope="col">Total</th>
@@ -67,6 +68,9 @@ $articleQuantity = null;
                                                 <p><?= $article['code'] ?></p>
                                             </div>
                                         </div>
+                                    </td>
+                                    <td>
+                                        <h5 class="cart-base_price"><?= $article['description'] ?></h5>
                                     </td>
                                     <td>
                                         <h5 class="cart-base_price"><?= $article['price'] ?></h5>
