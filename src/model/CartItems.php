@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Akame
+ * User: Unknown
  * Date: 28/05/2020
  * Time: 14:55
  */
@@ -21,8 +21,3 @@ Class CartItems{
         $this->totalPrice = $totalPrice;
     }
 }
-
-$snow = new CartItems("A00", "test/test", 100, 3, 300);
-
-
-echo $snow->code;

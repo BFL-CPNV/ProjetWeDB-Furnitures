@@ -41,7 +41,7 @@ class Cart
         }
 
         $this->numberOfItems += $quantityToAdd;
-        $this->ComputeTotalPrice();
+        $this->UpdateEveryItem();
 
     }
 
@@ -58,13 +58,12 @@ class Cart
                 $index++;
             }
         }
-        $this->ComputeNumberOfItems();
-        $this->ComputeTotalPrice();
-
+        $this->UpdateEveryItem();
     }
 
     public function UpdateCart($arrayQuantity){
         $codeArray = array_keys($arrayQuantity);
+        $fullCodeArray = $codeArray;
 
         for ($index = 0; $index < count($codeArray); $index++){
             $code = substr($codeArray[$index],strpos($codeArray[$index], '-', 17));
@@ -77,14 +76,12 @@ class Cart
         foreach ($codeArray as $code){
             foreach ($this->items as $item){
                 if ($item['code'] == $code){
-                    $item['quantity'] = (int)$arrayQuantity[$index];
-                    $this->ComputeTotalPrice();
-                    $this->ComputeNumberOfItems();
+                    $this->items[$index]['quantity'] = (int)$arrayQuantity[$fullCodeArray[$index]];
                     $index++;
                 }
             }
         }
-
+        $this->UpdateEveryItem();
     }
 
     private function AddItemToArray($item, $quantityToAdd)
@@ -121,16 +118,31 @@ class Cart
         }
     }
 
+
+    private function UpdateEveryItem(){
+        $this->ComputeItemTotalPrice();
+        $this->ComputeTotalPrice();
+        $this->ComputeNumberOfItems();
+    }
+
+    private function ComputeItemTotalPrice(){
+        foreach ($this->items as $index => $item){
+            $this->items[$index]['totalPrice'] = $item['quantity'] * $item['price'];
+        }
+    }
+
     private function ComputeTotalPrice()
     {
         $this->totalPrice = 0;
         foreach ($this->items as $item) {
-            $this->totalPrice += $item['totalPrice'];
+            $this->totalPrice += $item['quantity'] * $item['price'];
         }
     }
 
     private function ComputeNumberOfItems(){
         $this->numberOfItems = 0;
-        $this->numberOfItems = count($this->items);
+        foreach ($this->items as $item){
+            $this->numberOfItems += $item['quantity'];
+        }
     }
 }
