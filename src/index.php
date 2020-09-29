@@ -49,7 +49,7 @@ if (isset($_GET['action'])) {
             checkout();
             break;
         case 'updateCart':
-            echo 'in' . $_POST['cart-quantity-input-A00'];
+            updateCart($_POST);
             break;
         default :
             lost();

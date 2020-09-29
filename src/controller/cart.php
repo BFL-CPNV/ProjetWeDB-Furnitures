@@ -53,3 +53,13 @@ function checkout(){
         displayCart(null);
     }
 }
+
+function updateCart($codes){
+    if (count($codes) < 1){
+        require "view/lost.php";
+    }
+    else{
+        $codeArray = $_POST;
+        updateItemsInCart($codeArray, $_SESSION['cart']);
+    }
+ }

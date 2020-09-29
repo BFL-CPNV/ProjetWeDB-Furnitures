@@ -47,6 +47,7 @@ class Cart
 
     public function DeleteItemToCart($code, $quantityToDelete)
     {
+
         $index = 0;
         if ($quantityToDelete == null){
             foreach ($this->items as $item){
@@ -59,6 +60,30 @@ class Cart
         }
         $this->ComputeNumberOfItems();
         $this->ComputeTotalPrice();
+
+    }
+
+    public function UpdateCart($arrayQuantity){
+        $codeArray = array_keys($arrayQuantity);
+
+        for ($index = 0; $index < count($codeArray); $index++){
+            $code = substr($codeArray[$index],strpos($codeArray[$index], '-', 17));
+            $code = str_replace('-', '', $code);
+
+            $codeArray[$index] = $code;
+        }
+
+        $index = 0;
+        foreach ($codeArray as $code){
+            foreach ($this->items as $item){
+                if ($item['code'] == $code){
+                    $item['quantity'] = (int)$arrayQuantity[$index];
+                    $this->ComputeTotalPrice();
+                    $this->ComputeNumberOfItems();
+                    $index++;
+                }
+            }
+        }
 
     }
 

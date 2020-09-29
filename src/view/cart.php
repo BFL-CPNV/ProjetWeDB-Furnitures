@@ -78,7 +78,7 @@ $articleQuantity = null;
                                                 <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
                                             </button>
                                             <input class="size8 m-text18 t-center num-product input-text_cart input-disabled"
-                                                   name="cart-quantity-input-A00" type="text"
+                                                   name="cart-quantity-input-<?=$article['code']?>" type="text"
                                                        id="quantity_<?= $article['code'] ?>"
                                                    value=<?= $article['quantity'] ?>>
                                             <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 positive-button_cart"
