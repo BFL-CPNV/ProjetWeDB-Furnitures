@@ -71,7 +71,7 @@ ob_start();
                             <input type="hidden" value="<?= $singleArticle[0]['code'] ?>" name="input-code">
                             <div class="product_count">
                                 <span class="inumber-decrement"> <i class="ti-minus"></i></span>
-                                <input class="input-number" type="text" value="1" min="0" max="10"
+                                <input class="input-number single-article-input-disabled" type="text" value="1" min="1" max="10"
                                        name="input-quantityToAdd">
                                 <span class="number-increment"> <i class="ti-plus"></i></span>
                             </div>
