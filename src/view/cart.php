@@ -70,7 +70,7 @@ $articleQuantity = null;
                                         </div>
                                     </td>
                                     <td>
-                                        <h5 class="cart-base_price"><?= $article['description'] ?></h5>
+                                        <h5><?= $article['description'] ?></h5>
                                     </td>
                                     <td>
                                         <h5 class="cart-base_price"><?= $article['price'] ?></h5>
