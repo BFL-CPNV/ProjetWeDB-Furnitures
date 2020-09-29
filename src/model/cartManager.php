@@ -30,3 +30,7 @@ function addItemToCart($cart, $code, $quantityToAdd)
 function deleteItemInCart($cart, $code, $quantity){
     $cart->DeleteItemToCart($code,$quantity);
 }
+
+function updateItemsInCart($codeArray, $cart){
+    $cart->UpdateCart($codeArray);
+}

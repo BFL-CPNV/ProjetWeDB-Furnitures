@@ -2346,4 +2346,12 @@ input.num-product::-webkit-inner-spin-button {
     margin: 0; 
 }
 
+.input-disabled{
+    pointer-events:none;
+    background:#e6e6e6;
+}
+.single-article-input-disabled{
+    pointer-events:none;
+    background:#FFFFFF;
+}
 

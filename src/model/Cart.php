@@ -41,25 +41,47 @@ class Cart
         }
 
         $this->numberOfItems += $quantityToAdd;
-        $this->ComputeTotalPrice();
+        $this->UpdateEveryItem();
 
     }
 
     public function DeleteItemToCart($code, $quantityToDelete)
     {
+
         $index = 0;
         if ($quantityToDelete == null){
             foreach ($this->items as $item){
                 if ($item['code'] == $code){
                     if ($this->numberOfItems == 1) unset($_SESSION['cart']);
-                    else unset($this->items[$index]);
+                    else array_splice($this->items, $index, 1);
                 }
                 $index++;
             }
         }
-        $this->ComputeNumberOfItems();
-        $this->ComputeTotalPrice();
+        $this->UpdateEveryItem();
+    }
 
+    public function UpdateCart($arrayQuantity){
+        $codeArray = array_keys($arrayQuantity);
+        $fullCodeArray = $codeArray;
+
+        for ($index = 0; $index < count($codeArray); $index++){
+            $code = substr($codeArray[$index],strpos($codeArray[$index], '-', 17));
+            $code = str_replace('-', '', $code);
+
+            $codeArray[$index] = $code;
+        }
+
+        $index = 0;
+        foreach ($codeArray as $code){
+            foreach ($this->items as $item){
+                if ($item['code'] == $code){
+                    $this->items[$index]['quantity'] = (int)$arrayQuantity[$fullCodeArray[$index]];
+                    $index++;
+                }
+            }
+        }
+        $this->UpdateEveryItem();
     }
 
     private function AddItemToArray($item, $quantityToAdd)
@@ -70,6 +92,7 @@ class Cart
 
         $array = [
             "img" => $img,
+            "description" => $item[0]['description'],
             "code" => $item[0]['code'],
             "price" => (int)$item[0]['price'],
             "quantity" => (int)$quantityToAdd,
@@ -96,16 +119,31 @@ class Cart
         }
     }
 
+
+    private function UpdateEveryItem(){
+        $this->ComputeItemTotalPrice();
+        $this->ComputeTotalPrice();
+        $this->ComputeNumberOfItems();
+    }
+
+    private function ComputeItemTotalPrice(){
+        foreach ($this->items as $index => $item){
+            $this->items[$index]['totalPrice'] = $item['quantity'] * $item['price'];
+        }
+    }
+
     private function ComputeTotalPrice()
     {
         $this->totalPrice = 0;
         foreach ($this->items as $item) {
-            $this->totalPrice += $item['totalPrice'];
+            $this->totalPrice += $item['quantity'] * $item['price'];
         }
     }
 
     private function ComputeNumberOfItems(){
         $this->numberOfItems = 0;
-        $this->numberOfItems = count($this->items);
+        foreach ($this->items as $item){
+            $this->numberOfItems += $item['quantity'];
+        }
     }
 }

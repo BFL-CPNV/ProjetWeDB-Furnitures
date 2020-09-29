@@ -48,6 +48,9 @@ if (isset($_GET['action'])) {
         case 'checkout' :
             checkout();
             break;
+        case 'updateCart':
+            updateCart($_POST);
+            break;
         default :
             lost();
     }
