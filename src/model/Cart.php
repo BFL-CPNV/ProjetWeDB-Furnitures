@@ -53,7 +53,7 @@ class Cart
             foreach ($this->items as $item){
                 if ($item['code'] == $code){
                     if ($this->numberOfItems == 1) unset($_SESSION['cart']);
-                    else unset($this->items[$index]);
+                    else array_splice($this->items, $index, 1);
                 }
                 $index++;
             }

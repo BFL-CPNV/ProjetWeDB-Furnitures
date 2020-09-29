@@ -91,7 +91,10 @@ $articleQuantity = null;
                                         </div>
                                     </td>
                                     <td>
-                                        <h5 class="cart-total_item_price"><?= $article['totalPrice'] ?></h5>
+                                        <h5 class="cart-total_item_price" style="text-align: right"><?= $article['totalPrice'] ?></h5>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="genric-btn danger" style="float: right">X</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
