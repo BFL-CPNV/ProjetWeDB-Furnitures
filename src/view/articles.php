@@ -36,8 +36,7 @@ $rows = 0; // Column count
                                             <h4><?= $item['brand'] ?></h4>
                                             <h3>CHF <?= $item['price'] ?></h3>
                                             <a onclick="document.getElementById('all-articles-form-<?= $item['code'] ?>').submit();"
-                                               class="add_cart" style="cursor: pointer">+ add to cart<i
-                                                        class="ti-heart"></i></a>
+                                               class="add_cart" style="cursor: pointer">+ add to cart</a>
                                         </div>
                                     </form>
                                 </div>
