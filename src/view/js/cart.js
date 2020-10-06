@@ -1,8 +1,12 @@
 const POSITIVE_BUTTON_CLASSNAME = "positive-button_cart";
 const NEGATIVE_BUTTON_CLASSNAME = "negative-button_cart";
+const DELETE_BUTTON_CLASSNAME   = "delete-button_cart";
+
+let dataContainer = document.getElementsByClassName('cart-data-container');
 
 let positiveButton = document.getElementsByClassName('positive-button_cart');
 let negativeButton = document.getElementsByClassName('negative-button_cart');
+let deleteButton = document.getElementsByClassName('delete-button_cart')
 let basePrice = document.getElementsByClassName('cart-base_price');
 let inputText = document.getElementsByClassName('input-text_cart');
 let totalPriceItem = document.getElementsByClassName('cart-total_item_price');
@@ -27,6 +31,7 @@ class cartItem {
         this.UpdateItem();
     }
 
+
     UpdateItem(){
         this.total = this.price * this.quantity;
     }
@@ -35,14 +40,26 @@ class cartItem {
 const buttonsEventListener = (button) => {
     for (let index = 0; index < button.length; index++){
         button[index].addEventListener('click', () => {
-            if (button[index].className.includes(POSITIVE_BUTTON_CLASSNAME)) itemsArray[index].AddQuantity();
-            if (button[index].className.includes(NEGATIVE_BUTTON_CLASSNAME)) itemsArray[index].RemoveQuantity();
-            updateItem(itemsArray[index], index);
-            updateTotal(itemsArray);
+            if (button[index].className.includes(POSITIVE_BUTTON_CLASSNAME)){
+                itemsArray[index].AddQuantity();
+                updateItem(itemsArray[index], index);
+                updateTotal(itemsArray);
+            }
+            if (button[index].className.includes(NEGATIVE_BUTTON_CLASSNAME)){
+                itemsArray[index].RemoveQuantity();
+                updateItem(itemsArray[index], index);
+                updateTotal(itemsArray);
+            }
+            if (button[index].className.includes(DELETE_BUTTON_CLASSNAME)){
+                itemsArray[index] = null;
+                dataContainer[index].style.display = "none";
+                console.log(itemsArray);
+            }
+            console.log('update')
+
         });
     }
 };
-
 const updateItem = (item, index) => {
         totalPriceItem[index].textContent = item.total;
 };
@@ -50,10 +67,9 @@ const updateItem = (item, index) => {
 const updateTotal = (items) => {
     let newTotalPrice = 0;
     items.forEach((item) => {
-        newTotalPrice += item.total;
+        if (item != null) newTotalPrice += item.total;
     });
     totalPrice.textContent = newTotalPrice;
-
 };
 
 for(let index = 0; index < inputText.length; index++){
@@ -66,3 +82,4 @@ for(let index = 0; index < inputText.length; index++){
 
 buttonsEventListener(positiveButton);
 buttonsEventListener(negativeButton);
+buttonsEventListener(deleteButton);
