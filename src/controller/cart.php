@@ -61,6 +61,6 @@ function updateCart($codes){
     else{
         $codeArray = $_POST;
         updateItemsInCart($codeArray, $_SESSION['cart']);
-        displayCart($_SESSION['cart']);
+        displayCart(@$_SESSION['cart']);
     }
  }

@@ -47,7 +47,6 @@ class Cart
 
     public function DeleteItemToCart($code, $quantityToDelete)
     {
-
         $index = 0;
         if ($quantityToDelete == null){
             foreach ($this->items as $item){

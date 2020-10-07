@@ -32,5 +32,18 @@ function deleteItemInCart($cart, $code, $quantity){
 }
 
 function updateItemsInCart($codeArray, $cart){
+    $keys = array_keys($codeArray);
+    $index = 0;
+
+    $newArray = array();
+    foreach ($codeArray as $item){
+        $code = str_replace('-', '', substr($keys[$index],strpos($keys[$index], '-', 17))); /* This basically gets the code of the item */
+        $newArray[$index] = $code;
+        if ($item == null) {
+            deleteItemInCart($cart, $code, $item);
+        }
+        $index++;
+    }
+
     $cart->UpdateCart($codeArray);
 }
