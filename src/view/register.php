@@ -69,7 +69,7 @@ ob_start();
                                 <div class="col-md-12 form-group">
                                     <p>By registering an account, you agree to the general conditions of use.<a
                                                 href="https://termsfeed.com/blog/privacy-policies-vs-terms-conditions/">
-                                            CGU and private life</a>.</p>
+                                            <strong>CGU and private life</strong></a>.</p>
                                     <button type="submit" value="submit" class="btn_3">
                                         Register
                                     </button>

@@ -108,7 +108,8 @@
                             <?php else : ?>
                                 <!-- Display the button useful for logout-->
                                 <li class="nav-item"><a class="nav-link"
-                                                        href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Logout</a></li>
+                                                        href="index.php?action=logout" <?php if (@$_GET['action'] == "logout"): ?> style="color:#FC05CB"  <?php endif; ?>>Logout</a>
+                                </li>
                             <?php endif; ?>
                             <!-- after login, we display the user name-->
                             <?php if (isset($_SESSION['userEmailAddress'])) : ?>
@@ -204,6 +205,67 @@
 
 
 <!--::footer_part start::-->
+<!--::footer_part start::-->
+<footer class="footer_part">
+    <div class="container">
+        <div class="row justify-content-around">
+            <div class="col-sm-6 col-lg-2">
+                <div class="single_footer_part">
+                    <h4>Top Products</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.php?action=displaySingleArticle&code=A00">Most bought chair</a></li>
+                        <li><a href="index.php?action=displaySingleArticle&code=A01">Best rated chair</a></li>
+                        <li><a href="index.php?action=displaySingleArticle&code=A02">Most reviewed chair</a></li>
+                        <li><a href="https://www.jumbo.ch/fr/machines-outils-vetements-de-travail/outils-portatifs"
+                               target="_blank">Where to find tools</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-2">
+                <div class="single_footer_part">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://moodle.cpnv.ch/moodle/" target="_blank">Moodle</a></li>
+                        <li>
+                            <a href="https://mail.cpnv.ch/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.cpnv.ch%2fowa%2f"
+                               target="_blank">Outlook</a></li>
+                        <li><a href="https://www.hesge.ch/heg/" target="_blank">HEG</a></li>
+                        <li><a href="https://www.etml.ch/" target="_blank">ETML</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-2">
+                <div class="single_footer_part">
+                    <h4>Features</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.cpnv.ch/" target="_blank">CPNV</a></li>
+                        <li>
+                            <a href="https://www.bocadolobo.com/blog/furniture/luxurious-contemporary-italian-furniture-brands/"
+                               target="_blank">Random Brand</a></li>
+                        <li><a href="http://intranet.cpnv.ch/" target="_blank">Intranet</a></li>
+                        <li><a href="https://www.termsfeed.com/blog/privacy-policies-vs-terms-conditions/"
+                               target="_blank">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-2">
+                <div class="single_footer_part">
+                    <h4>Resources</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="https://www.forbes.com/sites/amandalauren/2018/09/13/professionals-share-their-secrets-to-easy-furniture-assembly/"
+                               target="_blank">Guides</a></li>
+                        <li>
+                            <a href="https://www.marketresearch.com/Consumer-Goods-c1596/Consumer-Goods-Retailing-c80/Furniture-c115/"
+                               target="_blank">Research</a></li>
+                        <li><a href="https://www.expertinstitute.com/expert-witness/furniture/"
+                               target="_blank">Experts</a></li>
+                        <li><a href="https://www.furniture.agency/" target="_blank">Agencies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
     </div>
     <div class="copyright_part">
         <div class="container">
@@ -215,6 +277,20 @@
                             All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i>
                             by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></P>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="footer_icon social_icon">
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.facebook.com/WoodenFurnitureStore/" class="single_social_icon"
+                                   target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="https://twitter.com/officialfv" class="single_social_icon" target="_blank"><i
+                                            class="fab fa-twitter"></i></a></li>
+                            <li><a href="index.php?action=home" class="single_social_icon"><i class="fas fa-globe"></i></a>
+                            </li>
+                            <li><a href="https://www.behance.net/galleries/product-design/furniture"
+                                   class="single_social_icon" target="_blank"><i class="fab fa-behance"></i></a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
