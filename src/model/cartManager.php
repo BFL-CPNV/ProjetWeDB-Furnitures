@@ -38,12 +38,11 @@ function updateItemsInCart($codeArray, $cart){
     $newArray = array();
     foreach ($codeArray as $item){
         $code = str_replace('-', '', substr($keys[$index],strpos($keys[$index], '-', 17))); /* This basically gets the code of the item */
-        $newArray[$index] = $code;
         if ($item == null) {
             deleteItemInCart($cart, $code, $item);
+            array_splice($codeArray, $index, 1);
         }
         $index++;
     }
-
     $cart->UpdateCart($codeArray);
 }
