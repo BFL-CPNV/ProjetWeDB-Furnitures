@@ -47,12 +47,11 @@ class Cart
 
     public function DeleteItemToCart($code, $quantityToDelete)
     {
-
         $index = 0;
         if ($quantityToDelete == null){
             foreach ($this->items as $item){
                 if ($item['code'] == $code){
-                    if ($this->numberOfItems == 1) unset($_SESSION['cart']);
+                    if (count($this->items) == 1) unset($_SESSION['cart']);
                     else array_splice($this->items, $index, 1);
                 }
                 $index++;

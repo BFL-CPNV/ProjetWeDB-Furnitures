@@ -40,19 +40,19 @@ ob_start();
                         <?php if (!isset($_SESSION['cart']) || $articles == false || count($articles) == 0) : ?>
                             <h2 style="text-align: center">Your cart is currently empty</h2>
                         <?php else: ?>
-
+                            <thead>
+                            <tr id="cart-header_table">
+                                <th scope="col">Article</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                            </thead>
                             <?php foreach ($articles as $article) : ?>
-                                <thead>
-                                <tr>
-                                    <th scope="col">Article</th>
-                                    <th scope="col">Description</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Total</th>
-                                </tr>
-                                </thead>
+
                                 <tbody>
-                                <tr>
+                                <tr class="cart-data-container">
                                     <td>
                                         <div class="media">
                                             <div class="d-flex">
@@ -61,7 +61,7 @@ ob_start();
                                             </div>
                                             <div class="media-body">
                                                 <p><?= $article['code'] ?></p>
-                                            </div>
+                                                </div>
                                         </div>
                                     </td>
                                     <td>
@@ -89,7 +89,7 @@ ob_start();
                                         <h5 class="cart-total_item_price" style="text-align: center"><?= $article['totalPrice'] ?></h5>
                                     </td>
                                     <td>
-                                        <a href="index.php?action=deleteItem&code=<?= $article['code']?>" class="genric-btn danger" style="float: right">X</a>
+                                        <a class="genric-btn danger delete-button_cart" style="float: right; color: white">X</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
