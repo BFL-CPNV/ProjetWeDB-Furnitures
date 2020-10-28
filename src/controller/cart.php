@@ -47,10 +47,12 @@ function deleteItemCart(){
 function checkout(){
     if (!isset($_SESSION['userEmailAddress'])) require "view/login.php"; /* not connected */
 
-    else{
-        unset($_SESSION['cart']);
-        displayCart(null);
-    }
+    if (@$_SESSION['cart']->numberOfItems == 0) require "view/lost.php";
+
+
+    unset($_SESSION['cart']);
+    displayCart(null);
+
 }
 
 function updateCart($codes){
