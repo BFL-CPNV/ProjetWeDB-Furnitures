@@ -12,6 +12,8 @@ let totalPriceItem = document.getElementsByClassName('cart-total_item_price');
 let totalPrice = document.getElementById('cart-total_price');
 let tableHeader = document.getElementById('cart-header_table');
 
+let checkoutButton = document.getElementById('checkout-link');
+
 let itemsArray = []; /* This list gonna contain every item with (price, quantity and total) */
 
 class cartItem {
@@ -83,7 +85,8 @@ const deleteItem = (index) => {
 
     if (counter === 0){
         tableHeader.textContent = "Your cart is currently empty";
-        tableHeader.style.cssText = "text-align: center; font-weight: 800; font-size: 30px;"
+        tableHeader.style.cssText = "text-align: center; font-weight: 800; font-size: 30px;";
+        checkoutButton.className = checkoutButton.className + "disabled-link";
     }
 }
 

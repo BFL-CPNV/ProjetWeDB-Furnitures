@@ -2355,3 +2355,10 @@ input.num-product::-webkit-inner-spin-button {
     background:#FFFFFF;
 }
 
+.disabled-link{
+    cursor: default;
+    pointer-events: none;
+    text-decoration: none;
+    color: grey;
+}
+

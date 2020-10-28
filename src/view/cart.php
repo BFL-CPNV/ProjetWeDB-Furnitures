@@ -129,7 +129,7 @@ ob_start();
                 </form>
                 <div class="checkout_btn_inner float-right">
                     <a class="btn_1" href="index.php?action=displayArticles">Continue Shopping</a>
-                    <a class="btn_1 checkout_btn_1" href="index.php?action=checkout">Proceed to checkout</a>
+                    <a id="checkout-link" class="btn_1 checkout_btn_1 <?php if (!isset($_SESSION['cart'])) :?> disabled-link<?php endif; ?>" href="index.php?action=checkout">Proceed to checkout</a>
                 </div>
             </div>
         </div>

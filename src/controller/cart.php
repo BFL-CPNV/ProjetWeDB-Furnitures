@@ -45,9 +45,8 @@ function deleteItemCart(){
 }
 
 function checkout(){
-    if (!isset($_SESSION['userEmailAddress'])){
-        require "view/login.php";
-    }
+    if (!isset($_SESSION['userEmailAddress'])) require "view/login.php"; /* not connected */
+
     else{
         unset($_SESSION['cart']);
         displayCart(null);
