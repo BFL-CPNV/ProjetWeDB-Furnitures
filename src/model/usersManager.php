@@ -4,7 +4,10 @@
  * @brief     This model is designed to implements users business logic
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY
- * @version   13-APR-2020
+ * @author    Updated by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 
 /**

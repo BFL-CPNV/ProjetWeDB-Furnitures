@@ -5,7 +5,10 @@
  * @brief     This file is the rooter managing the link with controllers.
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY
- * @version   13-APR-2020
+ * @author    Updated by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEl
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 require "model/Cart.php";
 session_start();
@@ -18,42 +21,42 @@ require "controller/cart.php";
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
-        case 'displayArticles' :
+        case 'displayArticles' : //Go to Articles page
             displayArticles();
             break;
-        case 'displaySingleArticle' :
+        case 'displaySingleArticle' : //Go to a specific article's page
             displaySingleArticle();
             break;
-        case 'displayCart' :
+        case 'displayCart' : //Go to the user's cart
             displayCart(@$_SESSION['cart']);
             break;
-        case 'addItemCart' :
+        case 'addItemCart' : //Adds the item to the cart
             addItemCart();
             break;
-        case 'deleteItem' :
+        case 'deleteItem' : //Deletes the item from the cart
             deleteItemCart();
             break;
-        case 'home' :
+        case 'home' : //Go to home page
             home();
             break;
-        case 'login' :
+        case 'login' : //Go to login page
             login($_POST);
             break;
-        case 'logout' :
+        case 'logout' : //Logout the user
             logout();
             break;
-        case 'register' :
+        case 'register' : //Go to register page
             register($_POST);
             break;
-        case 'checkout' :
+        case 'checkout' : //Checkout the cart
             checkout();
             break;
-        case 'updateCart':
+        case 'updateCart': //Refresh the cart and apply changes
             updateCart($_POST);
             break;
-        default :
+        default : //Illegal or Unknown action sends the user to the lost page
             lost();
     }
-} else {
+} else { //Otherwise go to the home page
     home();
 }

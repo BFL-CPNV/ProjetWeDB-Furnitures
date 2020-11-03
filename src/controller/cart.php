@@ -1,15 +1,20 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Akame
- * Date: 28/05/2020
- * Time: 12:10
+ * @file      cart.php
+ * @brief     This controller is designed to control the actions on the user's cart
+ * @author    Created by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 
 require "model/cartManager.php";
 
 
-
+/**
+ * @brief Display the cart's content
+ * @param $cart
+ */
 function displayCart($cart){
     if (!isset($cart)){
         require "view/cart.php";
@@ -21,6 +26,9 @@ function displayCart($cart){
 
 }
 
+/**
+ * @brief Add an item to the cart
+ */
 function addItemCart(){
 
     $quantityToAdd = @$_POST['input-quantityToAdd'];
@@ -36,6 +44,9 @@ function addItemCart(){
     displayCart($_SESSION['cart']);
 }
 
+/**
+ * @brief Delete an item from the cart
+ */
 function deleteItemCart(){
     $itemCode = @$_GET['code'];
     $quantity = @$_GET['quantity'];
@@ -44,6 +55,9 @@ function deleteItemCart(){
     displayCart(@$_SESSION['cart']);
 }
 
+/**
+ * @brief Checkout the cart
+ */
 function checkout(){
     if (!isset($_SESSION['userEmailAddress'])){
         require "view/login.php";
@@ -54,6 +68,10 @@ function checkout(){
     }
 }
 
+/**
+ * @brief Update / Refresh the cart
+ * @param $codes
+ */
 function updateCart($codes){
     if (count($codes) < 1){
         require "view/lost.php";

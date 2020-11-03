@@ -1,9 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Akame
- * Date: 13/05/2020
- * Time: 15:47
+ * @file      displaySingleArticle.php
+ * @brief     This view is designed to display a specific article's information
+ * @author    Created by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 
 $title = "Rent A Snow - Snows";

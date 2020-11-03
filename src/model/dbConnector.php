@@ -1,10 +1,13 @@
 <?php
 /**
  * @file      dbConnector.php
- * @brief     This controller is designed to manage database accesses and transactions
+ * @brief     This model is designed to manage database accesses and transactions
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY
- * @version   13-APR-2020
+ * @author    Updated by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 
 /**

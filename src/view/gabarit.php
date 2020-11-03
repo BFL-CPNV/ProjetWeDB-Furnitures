@@ -4,7 +4,10 @@
  * @brief     This view is designed to centralize all common graphical component like header and footer (will be call by all views)
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY
- * @version   13-APR-2020
+ * @author    Updated by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 
 ?>
@@ -198,7 +201,10 @@
 
 
 <div class="span12" id="divMain">
-    <?= $content; ?>
+    <?php
+    if (isset($content)) {
+        echo $content;
+    } ?>
 </div>
 
 <!--________FIN CONTENU________-->

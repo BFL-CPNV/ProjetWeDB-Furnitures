@@ -1,9 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Akame
- * Date: 28/05/2020
- * Time: 13:19
+ * @file      cartManager.php
+ * @brief     This model is designed to manage the user's cart
+ * @author    Created by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 
 require_once "model/Cart.php";

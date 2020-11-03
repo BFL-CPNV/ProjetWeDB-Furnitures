@@ -4,7 +4,10 @@
  * @brief     This view is designed to display articles
  * @author    Created by Pascal.BENZONANA
  * @author    Updated by Nicolas.GLASSEY
- * @version   13-APR-2020
+ * @author    Updated by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 
 $title = "Rent A Snow - Snows";

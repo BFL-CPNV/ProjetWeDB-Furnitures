@@ -1,13 +1,11 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Adam
- * Date: 28/05/2020
- * Time: 11:54
- *
- * Modified by Bastien Fardel
- * Date: 02.09.2020
- * Time: 10:13
+ * @file      cart.php
+ * @brief     This view is designed to display the user's cart
+ * @author    Created by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
  */
 
 ob_start();
@@ -37,7 +35,7 @@ ob_start();
             <div class="table-responsive">
                 <form action="index.php?action=updateCart" method="POST">
                     <table class="table">
-                        <?php if (!isset($_SESSION['cart']) || $articles == false || count($articles) == 0) : ?>
+                        <?php if (!isset($_SESSION['cart']) || !isset($articles) || count($articles) == 0) : ?>
                             <h2 style="text-align: center">Your cart is currently empty</h2>
                         <?php else: ?>
                             <thead>

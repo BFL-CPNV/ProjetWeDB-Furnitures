@@ -8,7 +8,6 @@
  * @version   13-APR-2020
  */
 
-
 /**
  * @brief This function is designed to create a new user session
  * @param $userEmailAddress : user unique id, must be meet RFC 5321/5322
