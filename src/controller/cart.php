@@ -51,7 +51,7 @@ function checkout(){
 
     checkoutCart($_SESSION['cart']);
     unset($_SESSION['cart']);
-    displayCart(null);
+    home();
 
 }
 
@@ -65,9 +65,8 @@ function updateCart($codes){
 
         updateItemsInCart($codeArray, $_SESSION['cart']);
 
-        if (strpos($submitType, "refresh")){
-            displayCart(@$_SESSION['cart']);
-        }
-        else if (strpos($submitType, "checkout")) checkout();
-    }
+        if (strpos($submitType,"refresh") !== false)  displayCart(@$_SESSION['cart']);
+
+        else if (strpos($submitType, "checkout") !== false) checkout();
+     }
  }
