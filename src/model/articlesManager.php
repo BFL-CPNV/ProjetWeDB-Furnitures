@@ -18,7 +18,6 @@ require_once 'model/dbConnector.php';
 
 function getArticles()
 {
-
     $snowsQuery = 'SELECT code, brand, material, price, qtyAvailable, photo, active FROM furnitures';
 
     return executeQuerySelect($snowsQuery);
@@ -31,6 +30,18 @@ function getArticles()
  */
 function getSingleArticleByCode($code){
     $articleQuery = "SELECT code, brand, material, price, qtyAvailable, photo, active, description, longDescription FROM furnitures where code = '$code';";
+
+    return executeQuerySelect($articleQuery);
+}
+
+function getArticleQuantity($code){
+    $articleQuery = "SELECT qtyAvailable FROM furnitures where code = '$code';";
+
+    return executeQuerySelect($articleQuery);
+}
+
+function removeQuantityByArticleCode($code, $quantity){
+    $articleQuery = "UPDATE furnitures SET qtyAvailable = qtyAvailable - $quantity where code = '$code';";
 
     return executeQuerySelect($articleQuery);
 }

@@ -22,6 +22,4 @@ CREATE TABLE IF NOT EXISTS `order_details` (
   `furnitureCode` varchar(4) NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (order_id) REFERENCES orders(id),
-  FOREIGN KEY (furniture_id) REFERENCES furnitures(id)
-);
-
+  FOREIGN KEY (furniture_id) REFERENCES furnitures(id));

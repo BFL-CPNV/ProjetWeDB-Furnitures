@@ -35,7 +35,6 @@ function updateItemsInCart($codeArray, $cart){
     $keys = array_keys($codeArray);
     $index = 0;
 
-    $newArray = array();
     foreach ($codeArray as $item){
         $code = str_replace('-', '', substr($keys[$index],strpos($keys[$index], '-', 17))); /* This basically gets the code of the item */
         if ($item == null) {
@@ -45,4 +44,8 @@ function updateItemsInCart($codeArray, $cart){
         $index++;
     }
     $cart->UpdateCart($codeArray);
+}
+
+function checkoutCart($cart){
+    $cart->CheckoutCart();
 }

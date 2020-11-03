@@ -96,7 +96,7 @@ ob_start();
 
                             <tr class="bottom_button">
                                 <td>
-                                    <button type="submit" class="btn_1">Refresh Cart</button>
+                                    <input type="submit" class="btn_1" value="Refresh Cart" name="submit_type">
                                 </td>
                                 <td></td>
                                 <td></td>
@@ -126,11 +126,12 @@ ob_start();
 
                         <?php endif; ?>
                     </table>
-                </form>
+
                 <div class="checkout_btn_inner float-right">
                     <a class="btn_1" href="index.php?action=displayArticles">Continue Shopping</a>
-                    <a id="checkout-link" class="btn_1 checkout_btn_1 <?php if (!isset($_SESSION['cart'])) :?> disabled-link<?php endif; ?>" href="index.php?action=checkout">Proceed to checkout</a>
+                    <input type="submit" id="checkout-link" class="btn_1 checkout_btn_1 <?php if (!isset($_SESSION['cart'])) :?> disabled-link<?php endif; ?>" value="Proceed to checkout" name="submit_type">
                 </div>
+                </form>
             </div>
         </div>
 </section>

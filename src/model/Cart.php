@@ -48,9 +48,9 @@ class Cart
     public function DeleteItemToCart($code, $quantityToDelete)
     {
         $index = 0;
-        if ($quantityToDelete == null){
-            foreach ($this->items as $item){
-                if ($item['code'] == $code){
+        if ($quantityToDelete == null) {
+            foreach ($this->items as $item) {
+                if ($item['code'] == $code) {
                     if (count($this->items) == 1) unset($_SESSION['cart']);
                     else array_splice($this->items, $index, 1);
                 }
@@ -60,27 +60,45 @@ class Cart
         $this->UpdateEveryItem();
     }
 
-    public function UpdateCart($arrayQuantity){
+    public function UpdateCart($arrayQuantity)
+    {
         $codeArray = array_keys($arrayQuantity);
         $fullCodeArray = $codeArray;
 
-        for ($index = 0; $index < count($codeArray); $index++){
-            $code = substr($codeArray[$index],strpos($codeArray[$index], '-', 17));
+        for ($index = 0; $index < count($codeArray); $index++) {
+            $code = substr($codeArray[$index], strpos($codeArray[$index], '-', 17));
             $code = str_replace('-', '', $code);
 
             $codeArray[$index] = $code;
         }
 
         $index = 0;
-        foreach ($codeArray as $code){
-            foreach ($this->items as $item){
-                if ($item['code'] == $code){
+        foreach ($codeArray as $code) {
+            foreach ($this->items as $item) {
+                if ($item['code'] == $code) {
                     $this->items[$index]['quantity'] = (int)$arrayQuantity[$fullCodeArray[$index]];
                     $index++;
                 }
             }
         }
         $this->UpdateEveryItem();
+    }
+
+    public function CheckoutCart()
+    {
+        $quantityToRemoveArray = [];
+        foreach($this->GetEveryItems() as $item){
+            try {
+                $itemQuantity = getArticleQuantity($item['code']);
+            } catch (ModelDataBaseException $ex) {
+                $error = true;
+                return 0;
+            }
+            if ($itemQuantity[0]['qtyAvailable'] < $item['quantity']) return 0;
+            array_push($quantityToRemoveArray, $item['quantity']);
+        }
+        $this->RemoveQuantityFromDatabase($quantityToRemoveArray);
+        return 0;
     }
 
     private function AddItemToArray($item, $quantityToAdd)
@@ -119,14 +137,16 @@ class Cart
     }
 
 
-    private function UpdateEveryItem(){
+    private function UpdateEveryItem()
+    {
         $this->ComputeItemTotalPrice();
         $this->ComputeTotalPrice();
         $this->ComputeNumberOfItems();
     }
 
-    private function ComputeItemTotalPrice(){
-        foreach ($this->items as $index => $item){
+    private function ComputeItemTotalPrice()
+    {
+        foreach ($this->items as $index => $item) {
             $this->items[$index]['totalPrice'] = $item['quantity'] * $item['price'];
         }
     }
@@ -139,10 +159,25 @@ class Cart
         }
     }
 
-    private function ComputeNumberOfItems(){
+    private function ComputeNumberOfItems()
+    {
         $this->numberOfItems = 0;
-        foreach ($this->items as $item){
+        foreach ($this->items as $item) {
             $this->numberOfItems += $item['quantity'];
         }
     }
+
+    private function RemoveQuantityFromDatabase($quantityToRemoveArray){
+        $index = 0;
+        foreach ($this->GetEveryItems() as $item){
+            try {
+                $output = removeQuantityByArticleCode($item['code'], $quantityToRemoveArray[$index]);
+            } catch (ModelDataBaseException $ex) {
+                $error = true;
+                return 0;
+            }
+            $index++;
+        }
+    }
+
 }
