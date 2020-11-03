@@ -10,6 +10,17 @@
 ob_start();
 $title = "Rent A Snow - Home";
 ?>
+<?php if (@$_GET['success-checkout']) :?>
+    <div class="section-top-border" style="margin-top: 20px">
+        <div class="row">
+            <div class="col-lg-12">
+                <blockquote class="generic-blockquote" style="background-color: green;">
+                    Votre commande a été prise en compte
+                </blockquote>
+            </div>
+        </div>
+    </div>
+<?php endif; ?>
     <!-- banner part start-->
     <section class="banner_part">
         <div class="container">

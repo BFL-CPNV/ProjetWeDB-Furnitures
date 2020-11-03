@@ -49,9 +49,13 @@ function checkout(){
 
     if (@$_SESSION['cart']->numberOfItems == 0) require "view/lost.php"; /* no items */
 
-    checkoutCart($_SESSION['cart']);
-    unset($_SESSION['cart']);
-    home();
+    $output = checkoutCart($_SESSION['cart']);
+    if ($output){
+        unset($_SESSION['cart']);
+        $_GET['success-checkout'] = true;
+        home();
+    }
+
 
 }
 

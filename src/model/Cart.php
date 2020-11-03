@@ -98,7 +98,7 @@ class Cart
             array_push($quantityToRemoveArray, $item['quantity']);
         }
         $this->RemoveQuantityFromDatabase($quantityToRemoveArray);
-        return 0;
+        return true;
     }
 
     private function AddItemToArray($item, $quantityToAdd)

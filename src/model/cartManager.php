@@ -47,5 +47,5 @@ function updateItemsInCart($codeArray, $cart){
 }
 
 function checkoutCart($cart){
-    $cart->CheckoutCart();
+     return $cart->CheckoutCart();
 }
