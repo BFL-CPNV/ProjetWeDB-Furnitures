@@ -1,0 +1,5 @@
+var controller_2articles_8php =
+[
+    [ "displayArticles", "controller_2articles_8php.html#a0c933da33d86c5eb6532f014012b8019", null ],
+    [ "displaySingleArticle", "controller_2articles_8php.html#ac411782c5ae95ecce278039e3c698042", null ]
+];

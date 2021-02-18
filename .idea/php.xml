@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PhpIncludePathManager">
+    <include_path>
+      <path value="$PROJECT_DIR$/doc/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/doc/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/doc/vendor/composer" />
+      <path value="$PROJECT_DIR$/doc/vendor/theseer/fxsl" />
+      <path value="$PROJECT_DIR$/doc/vendor/theseer/phpdox" />
+      <path value="$PROJECT_DIR$/doc/vendor/theseer/directoryscanner" />
+      <path value="$PROJECT_DIR$/doc/vendor/theseer/fdomdocument" />
+    </include_path>
+  </component>
+  <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
+</project>

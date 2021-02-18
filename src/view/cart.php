@@ -1,0 +1,140 @@
+<?php
+/**
+ * @file      cart.php
+ * @brief     This view is designed to display the user's cart
+ * @author    Created by Adam.GRUBER
+ * @author    Updated by Bastien.FARDEL
+ * @author    Updated by Kaarththigan.EAASWARALINGAM
+ * @version   03-NOV-2020
+ */
+
+ob_start();
+?>
+
+
+<section class="breadcrumb breadcrumb_bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="breadcrumb_iner">
+                    <div class="breadcrumb_iner_item">
+                        <h2>Cart Products</h2>
+                        <p>Home <span>-</span>Cart Products</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- breadcrumb start-->
+
+<!--================Cart Area =================-->
+<section class="cart_area padding_top">
+    <div class="container">
+        <div class="cart_inner">
+            <div class="table-responsive">
+                <form action="index.php?action=updateCart" method="POST">
+                    <table class="table">
+                        <?php if (!isset($_SESSION['cart']) || !isset($articles) || count($articles) == 0) : ?>
+                            <h2 style="text-align: center">Your cart is currently empty</h2>
+                        <?php else: ?>
+                            <thead>
+                            <tr id="cart-header_table">
+                                <th scope="col">Article</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                            </tr>
+                            </thead>
+                            <?php foreach ($articles as $article) : ?>
+
+                                <tbody>
+                                <tr class="cart-data-container">
+                                    <td>
+                                        <div class="media">
+                                            <div class="d-flex">
+                                                <img src="<?php if (empty($article['img'])) : ?> view/content/img/feature/default.jpg <?php else: ?> <?= $article['img'] ?> <?php endif; ?>"
+                                                     alt="" style="height: 100px"/>
+                                            </div>
+                                            <div class="media-body">
+                                                <p><?= $article['code'] ?></p>
+                                                </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5><?= $article['description'] ?></h5>
+                                    </td>
+                                    <td>
+                                        <h5 class="cart-base_price"><?= $article['price'] ?></h5>
+                                    </td>
+                                    <td>
+                                        <div class="flex-w bo5 of-hidden w-size17">
+                                            <button class="btn-num-product-down color1 flex-c-m size7 bg8 eff2 negative-button_cart"
+                                                    id="cmd<?= $article['code'] ?>1">
+                                                <i class="fs-12 fa fa-minus" aria-hidden="true"></i>
+                                            </button>
+                                            <input class="size8 m-text18 t-center num-product input-text_cart input-disabled"
+                                                   name="cart-quantity-input-<?=$article['code']?>" type="text"
+                                                       id="quantity_<?= $article['code'] ?>"
+                                                   value=<?= $article['quantity'] ?>>
+                                            <button class="btn-num-product-up color1 flex-c-m size7 bg8 eff2 positive-button_cart"
+                                                    id="cmd<?= $article['code'] ?>2">
+                                                <i class="fs-12 fa fa-plus" aria-hidden="true"></i>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <h5 class="cart-total_item_price" style="text-align: center"><?= $article['totalPrice'] ?></h5>
+                                    </td>
+                                    <td>
+                                        <a class="genric-btn danger delete-button_cart" style="float: right; color: white">X</a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+
+                            <tr class="bottom_button">
+                                <td>
+                                    <button type="submit" class="btn_1">Refresh Cart</button>
+                                </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <div class="cupon_text float-right">
+                                        <a class="btn_1" href="#">Cancel Cart</a>
+                                    </div>
+                                </td>
+                                <td>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <h5>Subtotal</h5>
+                                </td>
+                                <td>
+                                    <h5 id="cart-total_price"><?= $totalPrice ?></h5>
+                                </td>
+                            </tr>
+                            </tbody>
+
+                        <?php endif; ?>
+                    </table>
+                </form>
+                <div class="checkout_btn_inner float-right">
+                    <a class="btn_1" href="index.php?action=displayArticles">Continue Shopping</a>
+                    <a class="btn_1 checkout_btn_1" href="index.php?action=checkout">Proceed to checkout</a>
+                </div>
+            </div>
+        </div>
+</section>
+<?php
+
+$content = ob_get_clean();
+require "gabarit.php";
+
+?>
